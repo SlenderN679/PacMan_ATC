@@ -5,7 +5,6 @@
 #include "Map.h"
 #include "PacMan.h"
 
-
 using namespace std;
 
 Map map;
