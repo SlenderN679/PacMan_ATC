@@ -7,7 +7,7 @@ unsigned char Map::maze[36][28];
 Map::Map() {
 	for (int y = 0; y < 36; y++) {
 		for (int x = 0; x < 28; x++) {
-			if ((x == 0 || x == 27 || y == 3 || y == 33) && (y != 17 && y > 2 && y < 34)) {
+			if ((x == 0 || x == 27 || y == 3 || y == 33) && (y > 2 && y < 34) && !(y >= 13 && y <= 21)) {
 				maze[y][x] = WALL;
 			}
 			else {

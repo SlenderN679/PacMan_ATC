@@ -1,10 +1,11 @@
 #pragma once
 #include "Object.h"
+#include "Map.h"
 #include "list"
 using namespace std;
 class Wall : public Object{
 	static list<Wall> walls;
 public:
-	Wall(float width, float height, Size_TXY coords, ObjTypes type);
+	Wall(size_t width, size_t height, Size_TXY coords);
 };
 

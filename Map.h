@@ -14,7 +14,7 @@ public:
 	void drawMap();
 	static bool addPacman(Size_TXY pos);
 	bool addGhost(Size_TXY pos);
-	bool addWall(Size_TXY pos);
+	static bool addWall(Size_TXY pos);
 	bool addByte(Size_TXY pos);
 	bool addBit(Size_TXY pos);
 	static bool addPortal(Size_TXY pos);
