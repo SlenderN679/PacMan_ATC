@@ -1,5 +1,5 @@
 #include "PacMan.h"
-Size_TXY pacmanStart = { 26 , 14 };
+Size_TXY pacmanStart = { 14 , 26 };
 PacMan::PacMan() : Entity(pacmanStart, PACMAN_E) {
 	direction = RIGHT;
 	lives = 3;
@@ -23,24 +23,24 @@ void PacMan::move() {
 		}
 		break;
 	case LEFT:
-		if (Map::getCell({ Position().x - 1, Position().y }) != WALL) {
-			Map::clearCell(Position());
-			Entity::move({ -1, 0 });
-			Map::addPacman(Position());
-		} else if (Map::getCell({ Position().x - 1, Position().y }) == PORTAL) {
+		if (Map::getCell({ Position().x - 1, Position().y }) == PORTAL) {
 			Map::clearCell(Position());
 			Entity::move({ 25 , 0 });
+			Map::addPacman(Position());
+		} else if (Map::getCell({ Position().x - 1, Position().y }) != WALL) {
+			Map::clearCell(Position());
+			Entity::move({ -1, 0 });
 			Map::addPacman(Position());
 		}
 		break;
 	case RIGHT:
-		if (Map::getCell({Position().x + 1, Position().y}) != WALL) {
-			Map::clearCell(Position());
-			Entity::move({ 1 , 0 });
-			Map::addPacman(Position());
-		} else if (Map::getCell({Position().x + 1, Position().y}) == PORTAL) {
+		if (Map::getCell({ Position().x + 1, Position().y }) == PORTAL) {
 			Map::clearCell(Position());
 			Entity::move({ -25 , 0 });
+			Map::addPacman(Position());
+		} else if (Map::getCell({ Position().x + 1, Position().y }) != WALL) {
+			Map::clearCell(Position());
+			Entity::move({ 1 , 0 });
 			Map::addPacman(Position());
 		}
 		break;
@@ -49,4 +49,3 @@ void PacMan::move() {
 void PacMan::turn(Directions direction) {
 	this->direction = direction;
 }
-		//Map::getCell returned - 78 	char

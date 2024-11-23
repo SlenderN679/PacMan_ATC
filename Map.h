@@ -8,7 +8,7 @@
 #define BIT 155
 #define PORTAL 245
 class Map {
-	static unsigned char maze[28][36];
+	static unsigned char maze[36][28];
 public:
 	Map();
 	void drawMap();

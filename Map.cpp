@@ -3,24 +3,24 @@
 #include "iostream"
 #include <cstdlib>
 using namespace std;
-unsigned char Map::maze[28][36];
+unsigned char Map::maze[36][28];
 Map::Map() {
-	for (int i = 3; i < 34; i++) {
-		for (int j = 0; j < 28; j++) {
-			if ((j == 0 || j == 27 || i == 3 || i == 33) && j != 17) {
-				maze[j][i] = WALL;
+	for (int y = 0; y < 36; y++) {
+		for (int x = 0; x < 28; x++) {
+			if ((x == 0 || x == 27 || y == 3 || y == 33) && (y != 17 && y > 2 && y < 34)) {
+				maze[y][x] = WALL;
 			}
 			else {
-				maze[j][i] = SPACE;
+				maze[y][x] = SPACE;
 			}
 		}
 	}
 }
 void Map::drawMap() {
 	system("cls");
-	for (int i = 0; i < 28; i++) {
-		for (int j = 0; j < 36; j++) {
-			cout << maze[i][j];
+	for (int y = 0; y < 36; y++) {
+		for (int x = 0; x < 28; x++) {
+			cout << maze[y][x];
 		}
 		cout << endl;
 	}

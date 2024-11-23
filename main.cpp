@@ -34,13 +34,14 @@ int main() {
     map.addByte({ 4, 1 });
     map.addBit({ 17, 20 });
 	map.addPortal({ 0, 17 });
-	map.addPortal({ 34, 17 });
+	map.addPortal({ 27, 17 });
 	map.drawMap();
     std::thread inputThread(processInput);
+    this_thread::sleep_for(chrono::milliseconds(1000));
 	while (true){
 		pacman.move();
 		map.drawMap();
-		this_thread::sleep_for(chrono::milliseconds(500));
+		this_thread::sleep_for(chrono::milliseconds(100));
 	}
     inputThread.join();
     return 0;
