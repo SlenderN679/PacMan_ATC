@@ -1,2 +1,7 @@
-﻿  main.cpp
+﻿  Dot.cpp
+  Map.cpp
+  PacMan.cpp
+  Wall.cpp
+  main.cpp
+  Generating Code...
   PacMan.vcxproj -> C:\Users\Geral\Desktop\Escola\Arquitetura de Computadores\Programas\PacMan_ATC\PacMan_ATC\x64\Debug\PacMan.exe
