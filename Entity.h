@@ -11,11 +11,11 @@ enum EntTypes { BIT_E, BYTE_E, CHERRY_E, GHOST_E, PACMAN_E };
 
 // Declaração da classe Entity
 class Entity {
+
+protected:
     Size_TXY coords; // Coordenadas da entidade
     const EntTypes type; // Tipo da entidade
     static list<Entity*> entities; // Lista estática de apontadores para entidades
-
-protected:
     static bool rage; // Atributo protegido estático para indicar o estado de "rage"
 
 public:
