@@ -1,1 +1,1 @@
-#include "Ghost.h"
+#include "Ghost.h" // Inclui a definição da classe Ghost
