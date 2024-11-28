@@ -20,7 +20,13 @@ void Map::drawMap() {
 	system("cls");
 	for (int y = 0; y < 36; y++) {
 		for (int x = 0; x < 28; x++) {
-			cout << maze[y][x];
+			if (maze[y][x] == WALL && Entity::Rage()) {
+				cout << (char)WALL_;
+			}
+			else {
+				cout << maze[y][x];
+			}
+				
 		}
 		cout << endl;
 	}
@@ -69,7 +75,7 @@ bool Map::addPortal(Size_TXY pos) {
 }
 bool Map::clearCell(Size_TXY pos) {
 	if (maze[pos.y][pos.x] != WALL) {
-		maze[pos.y][pos.x] = 32;
+		maze[pos.y][pos.x] = SPACE;
 		return true;
 	}
 	return false;

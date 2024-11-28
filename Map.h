@@ -1,9 +1,11 @@
 #pragma once
 #include "_Size_TXY.h"	
+#include "Entity.h"
 #define SPACE 32
 #define PACMAN 184
 #define GHOST 225
-#define WALL 178
+#define WALL_ 178
+#define WALL 219
 #define BYTE 157
 #define BIT 155
 #define PORTAL 245

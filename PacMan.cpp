@@ -7,43 +7,52 @@ PacMan::PacMan() : Entity(pacmanStart, PACMAN_E) {
 	Map::addPacman(pacmanStart);
 }
 void PacMan::move() {
+	IntXY dir = { 0,0 };
 	switch (direction) {
 	case UP:
-		if (Map::getCell({ Position().x, Position().y - 1 }) != WALL) {
-			Map::clearCell(Position());
-			Entity::move({ 0 , -1 });
-			Map::addPacman(Position());
-		}
+		dir = { 0 , -1 };
 		break;
 	case DOWN:
-		if (Map::getCell({ Position().x, Position().y + 1 }) != WALL) {
-			Map::clearCell(Position());
-			Entity::move({ 0 , 1 });
-			Map::addPacman(Position());
-		}
+		dir = { 0 , 1 };
 		break;
 	case LEFT:
-		if (Map::getCell({ Position().x - 1, Position().y }) == PORTAL) {
-			Map::clearCell(Position());
-			Entity::move({ 25 , 0 });
-			Map::addPacman(Position());
-		} else if (Map::getCell({ Position().x - 1, Position().y }) != WALL) {
-			Map::clearCell(Position());
-			Entity::move({ -1, 0 });
-			Map::addPacman(Position());
-		}
+		dir = { -1 , 0 };
 		break;
 	case RIGHT:
-		if (Map::getCell({ Position().x + 1, Position().y }) == PORTAL) {
-			Map::clearCell(Position());
-			Entity::move({ -25 , 0 });
-			Map::addPacman(Position());
-		} else if (Map::getCell({ Position().x + 1, Position().y }) != WALL) {
-			Map::clearCell(Position());
-			Entity::move({ 1 , 0 });
-			Map::addPacman(Position());
-		}
+		dir = { 1 , 0 };
 		break;
+	}
+	Size_TXY pos = Position();
+	switch (Map::getCell({ pos.x + dir.x, pos.y + dir.y })) {
+	case BYTE:
+		score += 10;
+		rage = true;
+		Map::clearCell(pos);
+		pos = Entity::move(dir);
+		Dot::destroy(pos);
+		Map::clearCell(pos);
+		Map::addPacman(pos);
+		break;
+	case BIT:
+		score += 1;
+		Map::clearCell(pos);
+		pos = Entity::move(dir);
+		Map::clearCell(pos);
+		Map::addPacman(pos);
+		break;
+	case PORTAL:
+		Map::clearCell(pos);
+		pos = Entity::move({ 25 * (-dir.x), 0 });
+		Map::addPacman(pos);
+		break;
+	case WALL:
+		break;
+	case WALL_:
+		break;
+	default:
+		Map::clearCell(pos);
+		pos = Entity::move(dir);
+		Map::addPacman(pos);
 	}
 }
 void PacMan::turn(Directions direction) {

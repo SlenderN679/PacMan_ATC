@@ -13,9 +13,11 @@ protected:
 	static bool rage;
 public:
 	Entity(Size_TXY coords, EntTypes type);
-	bool move(IntXY dis);
+	Size_TXY move(IntXY dis);
 	Size_TXY Position() const;
 	EntTypes Type() const;
+	static bool Rage();
+	static void Calm();
 	/*bool ECollision(Size_TXY coords);
 	bool OCollision(Size_TXY coords);*/
 };
