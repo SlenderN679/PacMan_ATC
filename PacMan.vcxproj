@@ -130,6 +130,7 @@
     <ClCompile Include="Dot.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Ghost.cpp" />
+    <ClCompile Include="Intersection.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Object.cpp" />
@@ -138,6 +139,7 @@
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Intersection.h" />
     <ClInclude Include="_Directions.h" />
     <ClInclude Include="Dot.h" />
     <ClInclude Include="Entity.h" />

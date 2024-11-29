@@ -73,6 +73,13 @@ bool Map::addPortal(Size_TXY pos) {
 	}
 	return false;
 }
+bool Map::addInter(Size_TXY pos) {
+	if (maze[pos.y][pos.x] == SPACE) {
+		maze[pos.y][pos.x] = INTER;
+		return true;
+	}
+	return false;
+}
 bool Map::clearCell(Size_TXY pos) {
 	if (maze[pos.y][pos.x] != WALL) {
 		maze[pos.y][pos.x] = SPACE;

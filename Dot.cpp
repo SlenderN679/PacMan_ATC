@@ -3,7 +3,7 @@ list<Dot*> Dot::dots;
 Dot::Dot(Size_TXY pos, EntTypes type) : Entity(pos, type) {
 	dots.push_back(this);
 }
-bool Dot::Grid() {
+bool Dot::CreateDots() {
 	for (size_t y = 4; y < 33; y++) {
 		for (size_t x = 1; x < 27; x++) {
             if ((Map::getCell({x,y}) == SPACE)&&((!(0 <= x && x < 5 && 12 < y && y < 16)) && (!(0 <= x && x < 5 && 18 < y && y < 22)) && (!(22 < x && x <= 27 && 12 < y && y < 16)) && (!(22 < x && x <= 27 && 18 < y && y < 22)) && (!(10 < x && x < 17 && 14 < y && y < 19)))) {

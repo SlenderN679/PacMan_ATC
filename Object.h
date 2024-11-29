@@ -2,7 +2,7 @@
 #include "list"
 #include "_Size_TXY.h"
 using namespace std;
-enum ObjTypes{WALL_O, PORTAL_O};
+enum ObjTypes{WALL_O, PORTAL_O, INTER_O};
 class Object{
 	size_t width;
 	size_t height;

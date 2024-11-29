@@ -6,10 +6,12 @@
 #include "Wall.h"
 #include "Portal.h"
 #include "Map.h"
+#include "Intersection.h"
 #include "list"
 using namespace std;
 class PacMan : public Entity {
 	Directions direction;
+	Directions nextDirection;
 	int lives;
 	int score;
 public:

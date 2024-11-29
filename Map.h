@@ -4,11 +4,12 @@
 #define SPACE 32
 #define PACMAN 184
 #define GHOST 225
-#define WALL_ 178
+#define WALL_ 176
 #define WALL 219
 #define BYTE 157
 #define BIT 155
 #define PORTAL 245
+#define INTER 206
 class Map {
 	static unsigned char maze[36][28];
 public:
@@ -20,6 +21,7 @@ public:
 	static bool addByte(Size_TXY pos);
 	static bool addBit(Size_TXY pos);
 	static bool addPortal(Size_TXY pos);
+	static bool addInter(Size_TXY pos);
 	static bool clearCell(Size_TXY pos);
 	static unsigned char getCell(Size_TXY pos);
 };

@@ -2,12 +2,19 @@
 Size_TXY pacmanStart = { 14 , 26 };
 PacMan::PacMan() : Entity(pacmanStart, PACMAN_E) {
 	direction = RIGHT;
+	nextDirection = RIGHT;
 	lives = 3;
 	score = 0;
 	Map::addPacman(pacmanStart);
 }
 void PacMan::move() {
+	Size_TXY pos = Position();
 	IntXY dir = { 0,0 };
+	for (Directions i : Intersection::isIntersection(pos)) {
+		if (i == nextDirection) {
+			direction = nextDirection;
+		}
+	}
 	switch (direction) {
 	case UP:
 		dir = { 0 , -1 };
@@ -22,7 +29,6 @@ void PacMan::move() {
 		dir = { 1 , 0 };
 		break;
 	}
-	Size_TXY pos = Position();
 	switch (Map::getCell({ pos.x + dir.x, pos.y + dir.y })) {
 	case BYTE:
 		score += 10;
@@ -46,8 +52,10 @@ void PacMan::move() {
 		Map::addPacman(pos);
 		break;
 	case WALL:
+		direction = nextDirection;
 		break;
 	case WALL_:
+		direction = nextDirection;
 		break;
 	default:
 		Map::clearCell(pos);
@@ -56,5 +64,5 @@ void PacMan::move() {
 	}
 }
 void PacMan::turn(Directions direction) {
-	this->direction = direction;
+	nextDirection = direction;
 }
