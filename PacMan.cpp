@@ -66,3 +66,12 @@ void PacMan::move() {
 void PacMan::turn(Directions direction) {
 	nextDirection = direction;
 }
+void PacMan::dot(const Dot& d) {
+}
+void PacMan::wall(const Wall& w) {
+}
+void PacMan::portal(const Portal& p) {
+}
+Directions PacMan::getDirection() const{
+	return direction;
+}

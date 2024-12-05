@@ -46,7 +46,7 @@ int main() {
     Wall::CreateWalls();
 	Intersection::CreateIntersections();
     Dot::CreateDots();
-    map.addGhost({ 5, 9 });
+	Ghost::CreateGhosts();
     map.addPortal({ 0, 17 });
     map.addPortal({ 27, 17 });
     map.drawMap();
@@ -55,6 +55,7 @@ int main() {
     this_thread::sleep_for(chrono::milliseconds(1000));
     while (true) {
         pacman.move();
+		Ghost::MoveGhosts(pacman);
         map.drawMap();
         this_thread::sleep_for(chrono::milliseconds(250));
     }

@@ -20,9 +20,9 @@ public:
 	void turn(Directions direction);
 	void dot(const Dot& d);
 	void wall(const Wall& w);
-	void ghost(const Ghost& g);
+	//void ghost(const Ghost& g);
 	void portal(const Portal& p);
-	Directions getDirection();
+	Directions getDirection() const;
 	int getLives();
 	int getScore();
 };

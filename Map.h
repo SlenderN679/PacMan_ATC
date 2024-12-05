@@ -15,6 +15,7 @@ class Map {
 public:
 	Map();
 	void drawMap();
+	static bool add(Size_TXY pos, unsigned char type);
 	static bool addPacman(Size_TXY pos);
 	static bool addGhost(Size_TXY pos);
 	static bool addWall(Size_TXY pos);

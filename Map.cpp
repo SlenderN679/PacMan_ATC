@@ -31,6 +31,13 @@ void Map::drawMap() {
 		cout << endl;
 	}
 }
+bool Map::add(Size_TXY pos, unsigned char type) {
+	if (maze[pos.y][pos.x] == SPACE) {
+		maze[pos.y][pos.x] = type;
+		return true;
+	}
+	return false;
+}
 bool Map::addPacman(Size_TXY pos) {
 	if (maze[pos.y][pos.x] == SPACE) {
 		maze[pos.y][pos.x] = PACMAN;
@@ -39,7 +46,7 @@ bool Map::addPacman(Size_TXY pos) {
 	return false;
 }
 bool Map::addGhost(Size_TXY pos) {
-	if (maze[pos.y][pos.x] == SPACE) {
+	if ((maze[pos.y][pos.x] == SPACE)|| (maze[pos.y][pos.x] == BIT)) {
 		maze[pos.y][pos.x] = GHOST;
 		return true;
 	}
@@ -73,13 +80,13 @@ bool Map::addPortal(Size_TXY pos) {
 	}
 	return false;
 }
-bool Map::addInter(Size_TXY pos) {
-	if (maze[pos.y][pos.x] == SPACE) {
-		maze[pos.y][pos.x] = INTER;
-		return true;
-	}
-	return false;
-}
+//bool Map::addInter(Size_TXY pos) {
+//	if (maze[pos.y][pos.x] == SPACE) {
+//		maze[pos.y][pos.x] = INTER;
+//		return true;
+//	}
+//	return false;
+//}
 bool Map::clearCell(Size_TXY pos) {
 	if (maze[pos.y][pos.x] != WALL) {
 		maze[pos.y][pos.x] = SPACE;

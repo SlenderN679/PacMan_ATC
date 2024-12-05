@@ -3,7 +3,7 @@ list<Intersection> Intersection::intersections;
 Intersection::Intersection(Size_TXY coords, list<Directions> ways) : Object(1,1,coords,INTER_O) {
 	outs = ways;
 	intersections.push_back(*this);
-	Map::addInter(coords);
+	//Map::addInter(coords);
 }
 //list<Intersection> Intersection::GetIntersections() {
 //	return intersections;
