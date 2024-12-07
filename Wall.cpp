@@ -8,6 +8,8 @@ Wall::Wall(size_t width, size_t height, Size_TXY coords) : Object(width, height,
 		}
 	}
 }
+Wall::Wall(Size_TXY coords) : Object(1, 1 , coords, WALL_O) {
+}
 void Wall::CreateWalls() {
 	walls.push_back(new Wall(4, 3, { 2,5 }));
 	walls.push_back(new Wall(5, 3, { 7,5 }));
@@ -128,3 +130,6 @@ void Wall::CreateWalls() {
     //Wall w47(2, 3, { 13,29 });
     //Wall w48(10, 2, { 16,30 });
 }//por em ficheiro separado
+void Wall::CreateWall(Size_TXY coords) {
+	walls.push_back(new Wall(coords));
+} 

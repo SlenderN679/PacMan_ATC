@@ -12,40 +12,37 @@ Ghost::Ghost(Size_TXY coords, GstNames name) : Entity(coords, GHOST_E), name(nam
 	prevSpot = BIT;
 	wallCount = 0;
 	attack = false;
+	inHome = true;
 	//ghosts.push_back(this);
 	Map::addGhost(coords);
-	switch (name)
-	{
+	switch (name){
 	case BLINKY:
 		scatter = { 25, 0 };
-		inHome = false;
 		break;
 	case PINKY:
 		scatter = { 2, 0 };
-		inHome = true;
 		break;
 	case INKY:
 		scatter = { 27, 35 };
-		inHome = true;
 		break;
 	case CLYDE:
 		scatter = { 0, 35 };
-		inHome = true;
 		break;
 	default:
+		scatter = { 0, 0 };
 		break;
 	}
-	std::thread scatterThread(&Ghost::scatter_timer, this, 25);
+	std::thread scatterThread(&Ghost::scatter_timer, this, 30);
 	scatterThread.detach();
 }
-void Ghost::move(const PacMan& p) {
+void Ghost::move(PacMan& p) {
 	if (!inHome) {
 		Roam(p);
 	} else {
 		Home();
 	}
 }
-void Ghost::Roam(const PacMan& p) {
+void Ghost::Roam(PacMan& p) {
 	Size_TXY pos = Entity::Position();
 	Size_TXY pacPos = p.Position();
 	Directions pacDir = p.getDirection();
@@ -107,6 +104,9 @@ void Ghost::Roam(const PacMan& p) {
 	} else {
 		target = scatter;
 	}
+	if (rage) {
+		target = scatter;
+	}
 	for (Directions i : Intersection::isIntersection(pos)) {
 		bool choice = false;
 		while (!choice) {
@@ -114,52 +114,73 @@ void Ghost::Roam(const PacMan& p) {
 				choice = true;
 				return;
 			}
-			switch (direction){
+			switch (direction) {
 			case UP:
-				if (pos.y > target.y) {
-					nextDir = UP;
-					choice = true; 
-				}else if (pos.x > target.x) {
+				if (pos.x < target.x) {
+					nextDir = RIGHT;
+					choice = true;
+				}
+				else if (pos.x > target.x) {
 					nextDir = LEFT;
 					choice = true;
-				}else if (pos.x <= target.x) {
-					nextDir = RIGHT;
+				}/*else if(pos.y > target.y) {
+					nextDir = UP;
+					choice = true;
+				}*/else if (pos.x == target.x) {
+					nextDir = UP;
 					choice = true;
 				}
 				break;
 			case DOWN:
-				if (pos.y < target.y) {
+				/*if (pos.y < target.y) {
 					nextDir = DOWN;
 					choice = true;
-				} else if (pos.x > target.x) {
+				} else*/
+				if (pos.x > target.x) {
 					nextDir = LEFT;
 					choice = true;
-				} else if (pos.x <= target.x) {
+				}
+				else if (pos.x <= target.x) {
 					nextDir = RIGHT;
+					choice = true;
+				}
+				else if (pos.x == target.x) {
+					nextDir = DOWN;
 					choice = true;
 				}
 				break;
 			case LEFT:
-				if (pos.x > target.x) {
+				/*if (pos.x > target.x) {
 					nextDir = LEFT;
 					choice = true;
-				} else if (pos.y <= target.y) {
+				} else*/
+				if (pos.y <= target.y) {
 					nextDir = DOWN;
 					choice = true;
-				} else if (pos.y > target.y) {
+				}
+				else if (pos.y > target.y) {
 					nextDir = UP;
+					choice = true;
+				}
+				else if (pos.y == target.y) {
+					nextDir = LEFT;
 					choice = true;
 				}
 				break;
 			case RIGHT:
-				if (pos.x < target.x) {
-					nextDir = RIGHT;
+				if (pos.y > target.y) {
+					nextDir = UP;
 					choice = true;
-				} else if (pos.y <= target.y) {
+				} else
+				if (pos.y < target.y) {
 					nextDir = DOWN;
 					choice = true;
-				} else if (pos.y > target.y) {
-					nextDir = UP;
+				}/* else if (pos.x < target.x) {
+					nextDir = RIGHT;
+					choice = true;
+				}*/
+				else if (pos.y == target.y) {
+					nextDir = RIGHT;
 					choice = true;
 				}
 				break;
@@ -170,7 +191,7 @@ void Ghost::Roam(const PacMan& p) {
 		if (i == nextDir) {
 			direction = nextDir;
 		}
-	}
+	};
 	switch (direction) {
 	case UP:
 		dir = { 0 , -1 };
@@ -330,6 +351,22 @@ void Ghost::Roam(const PacMan& p) {
 			break;
 		}
 		break;
+	case PACMAN:
+		wallCount = 0;
+		p.hit();
+		if (rage) {
+			Map::clearCell(pos);
+			pos = GStart();
+			Map::addGhost(pos);
+		}
+		else {
+			Map::clearCell(pos);
+			Map::add(pos, prevSpot);
+			prevSpot = SPACE;
+			pos = Entity::move(dir);
+			Map::clearCell(pos);
+			Map::addGhost(pos);
+		}
 	default:
 		wallCount = 0;
 		//unsigned char a = SPACE;
@@ -401,7 +438,7 @@ void Ghost::CreateGhosts() {
 	Ghost inky({ 11, 17 }, INKY);
 	Ghost clyde({ 15, 17 }, CLYDE);*/
 }
-void Ghost::MoveGhosts(const PacMan& p) {
+void Ghost::MoveGhosts(PacMan& p) {
 	for (Ghost* g : ghosts) {
 		g->move(p);
 	}
@@ -415,10 +452,33 @@ void Ghost::scatter_timer(int seconds) {
 			attack=true;
 		}
 		if (attack) {
-			for (int i = 0; i < (seconds/5); i++) {
+			for (int i = 0; i < (seconds/2); i++) {
 				std::this_thread::sleep_for(std::chrono::seconds(1));
 			}
 			attack = false;
 		}
+	}
+}
+void Ghost::start_timer(int seconds) {
+	for (int i = 0; i < seconds; i++) {
+		std::this_thread::sleep_for(std::chrono::seconds(1));
+	}
+	attack = true;
+	inHome = false;
+	GStart();
+}
+void Ghost::Start() {
+	int x = 0;
+	for (Ghost* g : ghosts) {
+		//std::thread scatterThread(&Ghost::start_timer, g, x);
+		//g->start_timer(x);
+		for (int i = 0; i < x; i++) {
+			std::this_thread::sleep_for(std::chrono::seconds(1));
+		}
+		g->attack = true;
+		g->inHome = false;
+		Map::clearCell(g->Position());
+		g->GStart();
+		x = 30;
 	}
 }

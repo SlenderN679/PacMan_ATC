@@ -43,31 +43,29 @@ void processInput() {
 }
 
 int main() {
+    
+	//Map::readMap();
     Wall::CreateWalls();
 	Intersection::CreateIntersections();
     Dot::CreateDots();
 	Ghost::CreateGhosts();
     map.addPortal({ 0, 17 });
     map.addPortal({ 27, 17 });
-    map.drawMap();
+    map.drawMap(pacman);
     std::thread inputThread(processInput);
     std::thread rageThread(rage_timer, 15);
+    std::thread ghostStart(&Ghost::Start);
     this_thread::sleep_for(chrono::milliseconds(1000));
-    while (true) {
+    while (pacman.getLives()>0) {
         pacman.move();
 		Ghost::MoveGhosts(pacman);
-        map.drawMap();
+        map.drawMap(pacman);
         this_thread::sleep_for(chrono::milliseconds(250));
     }
+	system("cls");
+	cout << "Game Over!" << endl;
     inputThread.join();
     rageThread.join();
+	ghostStart.join();
     return 0;
 }
-
-/*
-wall -> 178
-byte -> 233
-bit -> 248
-Packman -> 67
-ghost -> 234
-*/

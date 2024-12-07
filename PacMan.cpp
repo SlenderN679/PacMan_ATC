@@ -29,6 +29,10 @@ void PacMan::move() {
 		dir = { 1 , 0 };
 		break;
 	}
+	if (Map::getCell(pos) == GHOST) {
+		hit();
+		return;
+	} 
 	switch (Map::getCell({ pos.x + dir.x, pos.y + dir.y })) {
 	case BYTE:
 		score += 10;
@@ -57,6 +61,15 @@ void PacMan::move() {
 	case WALL_:
 		direction = nextDirection;
 		break;
+	case GHOST:
+		hit();
+		if (rage) {
+			Map::clearCell(pos);
+			pos = Entity::move(dir);
+			Map::clearCell(pos);
+			Map::addPacman(pos);
+		}
+		break;
 	default:
 		Map::clearCell(pos);
 		pos = Entity::move(dir);
@@ -66,12 +79,27 @@ void PacMan::move() {
 void PacMan::turn(Directions direction) {
 	nextDirection = direction;
 }
-void PacMan::dot(const Dot& d) {
-}
-void PacMan::wall(const Wall& w) {
-}
-void PacMan::portal(const Portal& p) {
+void PacMan::hit() {
+	if (rage) {
+		score += 100;
+	} else {
+		lives--;
+		if (lives == 0) {
+			//game over
+		} else {
+		 	Map::clearCell(Position());
+			PStart(pacmanStart);
+			Map::addPacman(Position());
+		}
+	}
+	
 }
 Directions PacMan::getDirection() const{
 	return direction;
+}
+int PacMan::getLives() const{
+	return lives;
+}
+int PacMan::getScore() const{
+	return score;
 }

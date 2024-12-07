@@ -18,12 +18,14 @@ class Ghost : public Entity {
 	bool attack;
 public:
 	Ghost(Size_TXY coords, GstNames name);
-	void move(const PacMan& p);
+	void move(PacMan& p);
 	Directions getDirection() const;
 	GstNames getNames();
 	void Home();
-	void Roam(const PacMan& p);
+	void Roam(PacMan& p);
 	static void CreateGhosts();
-	static void MoveGhosts(const PacMan& p);
+	static void MoveGhosts(PacMan& p);
 	void scatter_timer(int seconds);
+	void start_timer(int seconds);
+	static void Start();
 };

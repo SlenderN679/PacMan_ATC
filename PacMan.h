@@ -18,11 +18,8 @@ public:
 	PacMan();
 	void move();
 	void turn(Directions direction);
-	void dot(const Dot& d);
-	void wall(const Wall& w);
-	//void ghost(const Ghost& g);
-	void portal(const Portal& p);
+	void hit();
 	Directions getDirection() const;
-	int getLives();
-	int getScore();
+	int getLives() const;
+	int getScore() const;
 };

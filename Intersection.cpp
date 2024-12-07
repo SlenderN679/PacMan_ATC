@@ -10,7 +10,7 @@ Intersection::Intersection(Size_TXY coords, list<Directions> ways) : Object(1,1,
 //}
 void Intersection::CreateIntersections() {
 	Intersection i1({ 6, 4 }, { RIGHT, LEFT, DOWN });
-	Intersection i2({ 21, 4 }, { RIGHT, LEFT, UP });
+	Intersection i2({ 21, 4 }, { RIGHT, LEFT, DOWN });
 	//---
 	Intersection i3({ 1, 8 }, { RIGHT, UP, DOWN });
 	Intersection i4({ 6, 8 }, { RIGHT, LEFT, UP, DOWN });

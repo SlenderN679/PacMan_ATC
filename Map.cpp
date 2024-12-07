@@ -2,8 +2,9 @@
 #include "Map.h"
 #include "iostream"
 #include <cstdlib>
+#include <fstream>
 using namespace std;
-unsigned char Map::maze[36][28];
+unsigned char Map::maze[36][28] = {};
 Map::Map() {
 	for (int y = 0; y < 36; y++) {
 		for (int x = 0; x < 28; x++) {
@@ -15,11 +16,13 @@ Map::Map() {
 			}
 		}
 	}
+	//readMap();
 }
-void Map::drawMap() {
+void Map::drawMap(const PacMan& p) {
 	system("cls");
-	for (int y = 0; y < 36; y++) {
-		for (int x = 0; x < 28; x++) {
+	maze[1][1] = (p.getLives()+48);
+	for (size_t y = 0; y < 36; y++) {
+		for (size_t x = 0; x < 28; x++) {
 			if (maze[y][x] == WALL && Entity::Rage()) {
 				cout << (char)WALL_;
 			}
@@ -32,11 +35,18 @@ void Map::drawMap() {
 	}
 }
 bool Map::add(Size_TXY pos, unsigned char type) {
-	if (maze[pos.y][pos.x] == SPACE) {
-		maze[pos.y][pos.x] = type;
-		return true;
+	maze[pos.y][pos.x] = type;
+	switch (type){
+	case WALL:
+		Wall::CreateWall(pos);
+	case BYTE:
+		Dot::CreateByte(pos);
+	case BIT:
+		Dot::CreateBit(pos);
+	default:
+		break;
 	}
-	return false;
+	return true;
 }
 bool Map::addPacman(Size_TXY pos) {
 	if (maze[pos.y][pos.x] == SPACE) {
@@ -97,3 +107,51 @@ bool Map::clearCell(Size_TXY pos) {
 unsigned char Map::getCell(Size_TXY pos) {
 	return maze[pos.y][pos.x];
 }
+void Map::readMap() {
+    std::ifstream file("mapa.txt");
+	unsigned char c;
+    if (!file) {
+        std::cout << "Error opening file" << std::endl;
+    } else {
+        for (size_t y = 0; y < 36; y++) {
+            for (size_t x = 0; x < 28; x++) {
+                file >> c;
+                add({ x, y }, c);
+            }
+            //file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
+    }
+	/*std::ifstream file("mapa.txt");
+	unsigned char c;
+	if (!file) {
+		std::cout << "Error opening file" << std::endl;
+	}
+	else {
+		for (size_t y = 0; y < 36; y++) {
+			do {
+				size_t x = 0;
+				file >> c;
+				add({ x, y }, c);
+				x++;
+			} while (c != '\n');
+		}
+	}*/
+}
+	//unsigned char c;
+	//file.open("mapa.txt");
+	////fopen_s(&file, "map.txt", "r");
+	//if (file == NULL) {
+	//	cout << "Error opening file" << endl;
+	//}
+	//else {
+	//	for (size_t y = 0; y < 36; y++) {
+	//		for (size_t x = 0; x < 28; x++) {
+
+	//			c = fgetc(file);
+	//			add({ x, y }, c);
+	//		}
+	//		fgetc(file);
+	//	}
+	//}
+	//fclose(file);
+//}

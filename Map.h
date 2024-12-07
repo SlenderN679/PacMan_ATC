@@ -1,6 +1,10 @@
 #pragma once
 #include "_Size_TXY.h"	
 #include "Entity.h"
+#include "Object.h"
+#include "PacMan.h"
+#include "Dot.h"
+#include "Wall.h"
 #define SPACE 32
 #define PACMAN 184
 #define GHOST 225
@@ -10,11 +14,12 @@
 #define BIT 155
 #define PORTAL 245
 #define INTER 206
+class PacMan;
 class Map {
 	static unsigned char maze[36][28];
 public:
 	Map();
-	void drawMap();
+	void drawMap(const PacMan& p);
 	static bool add(Size_TXY pos, unsigned char type);
 	static bool addPacman(Size_TXY pos);
 	static bool addGhost(Size_TXY pos);
@@ -25,6 +30,7 @@ public:
 	static bool addInter(Size_TXY pos);
 	static bool clearCell(Size_TXY pos);
 	static unsigned char getCell(Size_TXY pos);
+	static void readMap();
 };
 /*
 #define PACMAN 67

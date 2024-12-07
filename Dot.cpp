@@ -35,3 +35,9 @@ bool Dot::destroy(Size_TXY pos) {
 	}
 	return false;
 }
+void Dot::CreateBit(Size_TXY pos) {
+	Dot* dot = new Dot(pos, BIT_E);
+}
+void Dot::CreateByte(Size_TXY pos) {
+	Dot* dot = new Dot(pos, BYTE_E);
+}
