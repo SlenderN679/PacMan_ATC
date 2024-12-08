@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <chrono>
 #include <thread>
+#include <curses.h>
 #include "Map.h"
 #include "PacMan.h"
 #include "Ghost.h"
@@ -43,7 +44,10 @@ void processInput() {
 }
 
 int main() {
-    
+    initscr(); // Initialize the curses library
+    noecho(); // Don't echo user input to the screen
+    cbreak(); // Disable line buffering
+    keypad(stdscr, true); // Enable special keys
 	//Map::readMap();
     Wall::CreateWalls();
 	Intersection::CreateIntersections();

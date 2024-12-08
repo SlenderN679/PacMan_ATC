@@ -45,6 +45,7 @@ void PacMan::move() {
 		break;
 	case BIT:
 		score += 1;
+		/*Map::moveEntity(pos, Entity::move(dir), PACMAN, SPACE);*/
 		Map::clearCell(pos);
 		pos = Entity::move(dir);
 		Map::clearCell(pos);

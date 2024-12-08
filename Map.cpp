@@ -19,21 +19,47 @@ Map::Map() {
 	//readMap();
 }
 void Map::drawMap(const PacMan& p) {
-	system("cls");
-	maze[1][1] = (p.getLives()+48);
-	for (size_t y = 0; y < 36; y++) {
-		for (size_t x = 0; x < 28; x++) {
+	int maxY, maxX;
+	getmaxyx(stdscr, maxY, maxX);  // Get the current window size
+
+	int startY = (maxY - 36) / 2;  // Center the map vertically
+	int startX = (maxX - 28) / 2;  // Center the map horizontally
+
+	for (int y = 0; y < 36; ++y) {
+		for (int x = 0; x < 28; ++x) {
 			if (maze[y][x] == WALL && Entity::Rage()) {
-				cout << (char)WALL_;
+				mvaddch(startY + y, startX + x, WALL_);
 			}
 			else {
-				cout << maze[y][x];
+				mvaddch(startY + y, startX + x, maze[y][x]);
 			}
-				
+			//mvaddch(startY + y, startX + x, maze[y][x]);
 		}
-		cout << endl;
 	}
+	refresh();
 }
+//	for (int y = 0; y < 36; ++y) {
+//		for (int x = 0; x < 28; ++x) {
+//			mvaddch(y, x, maze[y][x]); 
+//		}
+//
+//	}
+//	refresh();
+//	/*system("cls");
+//	maze[1][1] = (p.getLives()+48);
+//	for (size_t y = 0; y < 36; y++) {
+//		for (size_t x = 0; x < 28; x++) {
+//			if (maze[y][x] == WALL && Entity::Rage()) {
+//				cout << (char)WALL_;
+//			}
+//			else {
+//				cout << maze[y][x];
+//			}
+//				
+//		}
+//		cout << endl;
+//	}*/
+//}
 bool Map::add(Size_TXY pos, unsigned char type) {
 	maze[pos.y][pos.x] = type;
 	switch (type){
@@ -155,3 +181,7 @@ void Map::readMap() {
 	//}
 	//fclose(file);
 //}
+void Map::moveEntity(Size_TXY pos, Size_TXY prev, unsigned char c, unsigned char p) {
+	mvaddch(prev.x, prev.y, p);
+	mvaddch(pos.x, pos.y, c);
+}

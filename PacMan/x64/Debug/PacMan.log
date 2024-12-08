@@ -1,2 +1,6 @@
-﻿  main.cpp
+﻿  Map.cpp
+C:\Users\Geral\Desktop\Escola\Arquitetura de Computadores\Programas\PacMan_ATC\PacMan_ATC\Map.cpp(185,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Geral\Desktop\Escola\Arquitetura de Computadores\Programas\PacMan_ATC\PacMan_ATC\Map.cpp(185,14): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Geral\Desktop\Escola\Arquitetura de Computadores\Programas\PacMan_ATC\PacMan_ATC\Map.cpp(186,20): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Geral\Desktop\Escola\Arquitetura de Computadores\Programas\PacMan_ATC\PacMan_ATC\Map.cpp(186,13): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   PacMan.vcxproj -> C:\Users\Geral\Desktop\Escola\Arquitetura de Computadores\Programas\PacMan_ATC\PacMan_ATC\x64\Debug\PacMan.exe

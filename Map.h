@@ -5,6 +5,7 @@
 #include "PacMan.h"
 #include "Dot.h"
 #include "Wall.h"
+#include <curses.h>
 #define SPACE 32
 #define PACMAN 184
 #define GHOST 225
@@ -31,6 +32,7 @@ public:
 	static bool clearCell(Size_TXY pos);
 	static unsigned char getCell(Size_TXY pos);
 	static void readMap();
+	static void moveEntity(Size_TXY pos, Size_TXY prev, unsigned char c, unsigned char p);
 };
 /*
 #define PACMAN 67
