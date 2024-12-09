@@ -5,7 +5,7 @@
 #include "list"
 class PacMan;
 using namespace std;
-enum GstNames { BLINKY/*RED*/, PINKY/*PINK*/, INKY/*BLUE*/, CLYDE/*ORANGE*/ };
+enum GstNames { BLINKY/*RED*/, PINKY/*PINK*/, INKY/*BLUE*/, CLYDE/*ORANGE*/ , X};
 class Ghost : public Entity {
 	Directions direction;
 	const GstNames name;
@@ -21,6 +21,7 @@ public:
 	void move(PacMan& p);
 	Directions getDirection() const;
 	GstNames getNames();
+	static GstNames getNames(Size_TXY pos);
 	void Home();
 	void Roam(PacMan& p);
 	static void CreateGhosts();

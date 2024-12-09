@@ -1,6 +1,8 @@
-﻿  Map.cpp
-C:\Users\Geral\Desktop\Escola\Arquitetura de Computadores\Programas\PacMan_ATC\PacMan_ATC\Map.cpp(185,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Geral\Desktop\Escola\Arquitetura de Computadores\Programas\PacMan_ATC\PacMan_ATC\Map.cpp(185,14): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Geral\Desktop\Escola\Arquitetura de Computadores\Programas\PacMan_ATC\PacMan_ATC\Map.cpp(186,20): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Geral\Desktop\Escola\Arquitetura de Computadores\Programas\PacMan_ATC\PacMan_ATC\Map.cpp(186,13): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+﻿  main.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.41.34120\include\curses.h(190,9): warning C4005: 'MOUSE_MOVED': macro redefinition
+  (compiling source file 'main.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\wincontypes.h(103,9):
+      see previous definition of 'MOUSE_MOVED'
+  
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   PacMan.vcxproj -> C:\Users\Geral\Desktop\Escola\Arquitetura de Computadores\Programas\PacMan_ATC\PacMan_ATC\x64\Debug\PacMan.exe

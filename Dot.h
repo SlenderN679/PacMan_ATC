@@ -11,4 +11,5 @@ public:
 	static bool destroy(Size_TXY pos);
 	static void CreateBit(Size_TXY pos);
 	static void CreateByte(Size_TXY pos);
+	static int DotReamining();
 };

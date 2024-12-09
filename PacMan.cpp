@@ -8,6 +8,8 @@ PacMan::PacMan() : Entity(pacmanStart, PACMAN_E) {
 	Map::addPacman(pacmanStart);
 }
 void PacMan::move() {
+	Map::addNumber(score, 0, 0);
+	Map::addNumber(lives, 1, 0);
 	Size_TXY pos = Position();
 	IntXY dir = { 0,0 };
 	for (Directions i : Intersection::isIntersection(pos)) {
@@ -103,4 +105,7 @@ int PacMan::getLives() const{
 }
 int PacMan::getScore() const{
 	return score;
+}
+void PacMan::updateStats() {
+	//update stats
 }

@@ -3,6 +3,9 @@
 #include "iostream"
 #include <cstdlib>
 #include <fstream>
+#include <string>
+#include <curses.h>
+#define COLOR_ORANGE 10
 using namespace std;
 unsigned char Map::maze[36][28] = {};
 Map::Map() {
@@ -18,33 +21,137 @@ Map::Map() {
 	}
 	//readMap();
 }
-void Map::drawMap(const PacMan& p) {
+void Map::drawMap() {
 	int maxY, maxX;
 	getmaxyx(stdscr, maxY, maxX);  // Get the current window size
 
 	int startY = (maxY - 36) / 2;  // Center the map vertically
 	int startX = (maxX - 28) / 2;  // Center the map horizontally
-
-	for (int y = 0; y < 36; ++y) {
-		for (int x = 0; x < 28; ++x) {
-			if (maze[y][x] == WALL && Entity::Rage()) {
+	//start_color();
+	//init_color(COLOR_ORANGE, 1000, 647, 0);
+	init_pair(1, COLOR_BLUE, COLOR_BLACK);  // Wall
+	init_pair(2, COLOR_YELLOW, COLOR_BLACK);  // Byte,PacMan
+	init_pair(3, COLOR_GREEN, COLOR_BLACK);  // Portal
+	init_pair(4, COLOR_RED, COLOR_BLACK);  // Blinky
+	init_pair(5, COLOR_MAGENTA, COLOR_BLACK);  // Pinky
+	init_pair(6, COLOR_CYAN, COLOR_BLACK);  // Inky
+	//init_pair(7, COLOR_ORANGE, COLOR_BLACK);  // Clyde
+	init_pair(8, COLOR_WHITE, COLOR_BLACK);  // Bit
+	//--
+	for (size_t y = 0; y < 36; ++y) {
+		for (size_t x = 0; x < 28; ++x) {
+			if (Entity::Rage()) {
+				switch (maze[y][x]) {
+				case WALL:
+					attron(COLOR_PAIR(8));
+					mvaddch(startY + y, startX + x, WALL_);
+					attroff(COLOR_PAIR(8));
+					break;
+				case BYTE:
+					attron(COLOR_PAIR(2));
+					mvaddch(startY + y, startX + x, maze[y][x]);
+					attroff(COLOR_PAIR(2));
+					break;
+				case BIT:
+					attron(COLOR_PAIR(8));
+					mvaddch(startY + y, startX + x, maze[y][x]);
+					attroff(COLOR_PAIR(8));
+					break;
+				case PACMAN:
+					attron(COLOR_PAIR(2));
+					mvaddch(startY + y, startX + x, maze[y][x]);
+					attroff(COLOR_PAIR(2));
+					break;
+				case GHOST:
+					attron(COLOR_PAIR(1));
+					mvaddch(startY + y, startX + x, maze[y][x]);
+					attroff(COLOR_PAIR(1));
+					break;
+				case PORTAL:
+					attron(COLOR_PAIR(3));
+					mvaddch(startY + y, startX + x, maze[y][x]);
+					attroff(COLOR_PAIR(3));
+					break;
+				default:
+					attron(COLOR_PAIR(8));
+					mvaddch(startY + y, startX + x, maze[y][x]);
+					attroff(COLOR_PAIR(8));
+					break;
+				}
+			} else {
+				switch (maze[y][x]) {
+				case WALL:
+					attron(COLOR_PAIR(1));
+					mvaddch(startY + y, startX + x, maze[y][x]);
+					attroff(COLOR_PAIR(1));
+					break;
+				case BYTE:
+					attron(COLOR_PAIR(2));
+					mvaddch(startY + y, startX + x, maze[y][x]);
+					attroff(COLOR_PAIR(2));
+					break;
+				case BIT:
+					attron(COLOR_PAIR(8));
+					mvaddch(startY + y, startX + x, maze[y][x]);
+					attroff(COLOR_PAIR(8));
+					break;
+				case PACMAN:
+					attron(COLOR_PAIR(2));
+					mvaddch(startY + y, startX + x, maze[y][x]);
+					attroff(COLOR_PAIR(2));
+					break;
+				case GHOST:
+					switch (Ghost::getNames({x,y})) {
+					case BLINKY:
+						attron(COLOR_PAIR(4));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(4));
+						break;
+					case PINKY:
+						attron(COLOR_PAIR(5));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(5));
+						break;
+					case INKY:
+						attron(COLOR_PAIR(6));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(6));
+						break;
+					case CLYDE:
+						attron(COLOR_PAIR(2));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(2));
+						break;
+					default:
+						attron(COLOR_PAIR(4));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(4));
+						break;
+					}
+					break;
+				case PORTAL:
+					attron(COLOR_PAIR(3));
+					mvaddch(startY + y, startX + x, maze[y][x]);
+					attroff(COLOR_PAIR(3));
+					break;
+				default:
+					attron(COLOR_PAIR(8));
+					mvaddch(startY + y, startX + x, maze[y][x]);
+					attroff(COLOR_PAIR(8));
+					break;
+				}
+			}
+			/*if (maze[y][x] == WALL && Entity::Rage()) {
 				mvaddch(startY + y, startX + x, WALL_);
 			}
 			else {
 				mvaddch(startY + y, startX + x, maze[y][x]);
-			}
+			}*/
 			//mvaddch(startY + y, startX + x, maze[y][x]);
 		}
 	}
 	refresh();
 }
-//	for (int y = 0; y < 36; ++y) {
-//		for (int x = 0; x < 28; ++x) {
-//			mvaddch(y, x, maze[y][x]); 
-//		}
-//
-//	}
-//	refresh();
 //	/*system("cls");
 //	maze[1][1] = (p.getLives()+48);
 //	for (size_t y = 0; y < 36; y++) {
@@ -181,7 +288,15 @@ void Map::readMap() {
 	//}
 	//fclose(file);
 //}
-void Map::moveEntity(Size_TXY pos, Size_TXY prev, unsigned char c, unsigned char p) {
-	mvaddch(prev.x, prev.y, p);
-	mvaddch(pos.x, pos.y, c);
+//void Map::moveEntity(Size_TXY pos, Size_TXY prev, unsigned char c, unsigned char p) {
+//	mvaddch(prev.x, prev.y, p);
+//	mvaddch(pos.x, pos.y, c);
+//}
+void Map::addNumber(int number, int startY, int startX) {
+	std::string numberStr = std::to_string(number);
+	for (size_t i = 0; i < numberStr.length(); ++i) {
+		if (startX + i < 28) { 
+			maze[startY][startX + i] = numberStr[i];
+		}
+	}
 }

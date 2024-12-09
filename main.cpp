@@ -44,10 +44,14 @@ void processInput() {
 }
 
 int main() {
+    //---
     initscr(); // Initialize the curses library
     noecho(); // Don't echo user input to the screen
     cbreak(); // Disable line buffering
     keypad(stdscr, true); // Enable special keys
+    curs_set(0);
+	start_color();
+    //---
 	//Map::readMap();
     Wall::CreateWalls();
 	Intersection::CreateIntersections();
@@ -55,19 +59,30 @@ int main() {
 	Ghost::CreateGhosts();
     map.addPortal({ 0, 17 });
     map.addPortal({ 27, 17 });
-    map.drawMap(pacman);
+    //---
+    map.drawMap();
+    //---
     std::thread inputThread(processInput);
     std::thread rageThread(rage_timer, 15);
     std::thread ghostStart(&Ghost::Start);
     this_thread::sleep_for(chrono::milliseconds(1000));
-    while (pacman.getLives()>0) {
+    //---
+    while ((pacman.getLives()>0)&&(Dot::DotReamining()>0)) {
         pacman.move();
 		Ghost::MoveGhosts(pacman);
-        map.drawMap(pacman);
+        map.drawMap();
         this_thread::sleep_for(chrono::milliseconds(250));
     }
-	system("cls");
-	cout << "Game Over!" << endl;
+    //---
+    clear();
+	if (pacman.getLives() < 0) {
+		mvprintw(0,0,"You Lose!\n");
+	}
+	else {
+		mvprintw(0,0,"You Win!\n");
+	}
+    refresh();
+    //---
     inputThread.join();
     rageThread.join();
 	ghostStart.join();

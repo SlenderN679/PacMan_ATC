@@ -482,3 +482,11 @@ void Ghost::Start() {
 		x = 30;
 	}
 }
+GstNames Ghost::getNames(Size_TXY pos) {
+	for (Ghost* g : ghosts) {
+		if (g->Position() == pos) {
+			return g->name;
+		}
+	}
+	return X;
+}

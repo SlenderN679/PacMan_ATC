@@ -3,6 +3,7 @@
 #include "Entity.h"
 #include "Object.h"
 #include "PacMan.h"
+#include "Ghost.h"
 #include "Dot.h"
 #include "Wall.h"
 #include <curses.h>
@@ -20,7 +21,7 @@ class Map {
 	static unsigned char maze[36][28];
 public:
 	Map();
-	void drawMap(const PacMan& p);
+	void drawMap();
 	static bool add(Size_TXY pos, unsigned char type);
 	static bool addPacman(Size_TXY pos);
 	static bool addGhost(Size_TXY pos);
@@ -33,6 +34,7 @@ public:
 	static unsigned char getCell(Size_TXY pos);
 	static void readMap();
 	static void moveEntity(Size_TXY pos, Size_TXY prev, unsigned char c, unsigned char p);
+	static void addNumber(int number, int startY, int startX);
 };
 /*
 #define PACMAN 67

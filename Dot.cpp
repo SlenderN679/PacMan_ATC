@@ -41,3 +41,6 @@ void Dot::CreateBit(Size_TXY pos) {
 void Dot::CreateByte(Size_TXY pos) {
 	Dot* dot = new Dot(pos, BYTE_E);
 }
+int Dot::DotReamining() {
+	return dots.size();
+}
