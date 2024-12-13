@@ -1,152 +1,107 @@
-﻿//#include <iostream>
-//#include <iomanip>
-//#include <cstdlib>
-//#include <Windows.h>
-//#include <chrono>
-//#include <thread>
-//using namespace std;
-//void menu();
-//void Settings();
-//int x,y, opd, d;
-//void menu() {
-//    cout << "\033[37m" << setw(20) << "PAC-MAN" << endl << endl << endl;
-//    cout << "\033[37m" << setw(18) << "Play" << endl;
-//    cout << "\033[37m" << setw(20) << "Settings" << endl;
-//    cout << "\033[37m" << setw(18) << "Exit" << endl << endl;
-//    cout << "\033[37m" << setw(22) << "Press ENTER" << endl;
-//    if (d == 1) {
-//        cout << "Easy mode" << endl;
-//    }
-//    if (d == 2) {
-//        cout << "Medium mode" << endl;
-//    }
-//    if (d == 3) {
-//        cout << "Hard mode" << endl;
-//    }
-//    cin >> x;
-//    if (x == 1) {
-//        system("cls");
-//        cout << "\033[37m" << setw(20) << "PAC-MAN" << endl << endl << endl;
-//        cout << "\033[33m" << setw(18) << ">Play" << endl;
-//        cout <<"\033[37m" << setw(20) << "Settings" << endl;
-//        cout << "\033[37m" << setw(18) << "Exit" << endl << endl;
-//        this_thread::sleep_for(chrono::seconds(2));
-//        system("cls");
-//        cout << "jogo";
-//    }
-//    if (x == 2) {
-//        Settings();
-//        
-//    }
-//    if (x == 3) {
-//        system("cls");
-//        cout << "\033[37m" << setw(20) << "PAC-MAN" << endl << endl << endl;
-//        cout << "\033[37m" << setw(18) << "Play" << endl;
-//        cout << "\033[37m" << setw(20) << "Settings" << endl;
-//        cout << "\033[33m" << setw(18) << ">Exit" << endl << endl;
-//        this_thread::sleep_for(chrono::milliseconds(700));
-//        exit(0);
-//
-//    }
-//}
-//void Settings() {
-//    system("cls");
-//    cout << "\033[37m" << setw(20) << "PAC-MAN" << endl << endl << endl;
-//    cout << "\033[37m" << setw(18) << "Play" << endl;
-//    cout << "\033[33m" << setw(20) << ">Settings" << endl;
-//    cout << "\033[37m" << setw(18) << "Exit" << endl << endl;
-//    this_thread::sleep_for(chrono::milliseconds(700));
-//    system("cls");
-//    cout << "\033[37m" << setw(20) << "PAC-MAN" << endl << endl << endl;
-//    cout << setw(20) << "Controls" << endl;
-//    cout << setw(22) << "Difficulty" << endl;
-//    cout << setw(18) << "Back" << endl;
-//    cin >> y;
-//    if (y == 1) {
-//        system("cls");
-//        cout << "\033[37m" << setw(20) << "PAC-MAN" << endl << endl << endl;
-//        cout << "\033[33m" << setw(20) << ">Controls" << endl;
-//        cout << "\033[37m" << setw(22) << "Difficulty" << endl;
-//        cout << "\033[37m" << setw(18) << "Back" << endl;
-//        this_thread::sleep_for(chrono::milliseconds(700));
-//        system("cls");
-//        cout << "\033[36m" << "=======CONTROLS=======" << endl;
-//        cout << "Move Up" << setw(16) << u8"\u2191\n";
-//        cout << "Move Down" << setw(14) << u8"\u2193\n";
-//        cout << "Move Left" << setw(14) << u8"\u2190\n";
-//        cout << "Move Right" << setw(13) << u8"\u2192\n";
-//        cout << "Back" << setw(8) << endl;
-//        cin >> y;
-//        if (y == 4) {
-//            system("cls");
-//            cout << "\033[36m" << "=======CONTROLS=======" << endl;
-//            cout << "Move Up" << setw(16) << u8"\u2191\n";
-//            cout << "Move Down" << setw(14) << u8"\u2193\n";
-//            cout << "Move Left" << setw(14) << u8"\u2190\n";
-//            cout << "Move Right" << setw(13) << u8"\u2192\n";
-//            cout << "\033[33m" << ">Back" << setw(8) << endl;
-//            this_thread::sleep_for(chrono::milliseconds(700));
-//            system("cls");
-//            Settings();
-//        }
-//    }
-//    if (y == 2) {
-//        system("cls");
-//        cout << "\033[37m" << setw(20) << "PAC-MAN" << endl << endl << endl;
-//        cout << "\033[37m" << setw(20) << "Controls" << endl;
-//        cout << "\033[33m" << setw(22) << ">Difficulty" << endl;
-//        cout << "\033[37m" << "\033[37m" << setw(18) << "Back" << endl;
-//        this_thread::sleep_for(chrono::milliseconds(700));
-//        system("cls");
-//        cout << "\033[37m" << "========DIFFICULTY========" << endl;
-//        cout <<"\033[37m" << "Easy"  << "\033[37m" << setw(10) << "Medium"  <<"\033[37m" << setw(10) << "Hard" << endl;
-//        cout << "\033[37m" << setw(4) << u8"\u2191" << "\033[37m" << setw(12) << u8"\u2191" << "\033[37m" << setw(12) << u8"\u2191"<< endl;
-//        cin >> opd;//opção da dificuldade
-//        while (true) {
-//            if (opd == 1) {
-//                system("cls");
-//                cout << "\033[37m" << "========DIFFICULTY========" << endl;
-//                cout << "\033[33m" << "Easy" << "\033[37m" << setw(10) << "Medium" << "\033[37m" << setw(10) << "Hard" << endl;
-//                cout << "\033[33m" << setw(4) << u8"\u2191" << "\033[37m" << setw(12) << u8"\u2191" << "\033[37m" << setw(12) << u8"\u2191" << endl;
-//                cin >> opd;
-//                d = 1;
-//            }
-//            if (opd == 2) {
-//                system("cls");
-//                cout << "\033[37m" << "========DIFFICULTY========" << endl;
-//                cout << "\033[37m" << "Easy" << "\033[33m" << setw(10) << "Medium" << "\033[37m" << setw(10) << "Hard" << endl;
-//                cout << "\033[37m" << setw(4) << u8"\u2191" << "\033[33m" << setw(12) << u8"\u2191" << "\033[37m" << setw(12) << u8"\u2191" << endl;
-//                //cin >> opd;
-//                d = 2;
-//            }
-//            if (opd == 3) {
-//                system("cls");
-//                cout << "\033[37m" << "========DIFFICULTY========" << endl;
-//                cout << "\033[37m" << "Easy" << "\033[37m" << setw(10) << "Medium" << "\033[33m" << setw(10) << "Hard" << endl;
-//                cout << "\033[37m" << setw(4) << u8"\u2191" << "\033[37m" << setw(12) << u8"\u2191" << "\033[33m" << setw(12) << u8"\u2191" << endl;
-//                cin >> opd;
-//                d = 3;
-//            }
-//            if (opd == 4) {
-//                Settings();
-//                return;
-//            }
-//        }
-//    }
-//    if (y == 3) {
-//        system("cls");
-//        cout << "\033[37m" << setw(20) << "PAC-MAN" << endl << endl << endl;
-//        cout << setw(20) << "Controls" << endl;
-//        cout << setw(22) << "Difficulty" << endl;
-//        cout << "\033[33m" << setw(18) << ">Back" << endl;
-//        this_thread::sleep_for(chrono::milliseconds(700));
-//        system("cls");
-//        menu();
-//    }
-//
-//}
-//int main() {
-//    system("chcp 65001");
-//    system("cls");
-//    menu();
-//}
+﻿#pragma once
+#include "Menu.h"
+
+// Desenho genérico para menus
+void draw_menu(const char* title, const char* options[], int num_options, int highlight) {
+    clear();
+    mvprintw(0, (COLS - (int)strlen(title)) / 2, title); // Título centralizado
+    for (int i = 0; i < num_options; ++i) {
+        if (i == highlight) {
+            attron(A_REVERSE);
+            mvprintw(2 + i, (COLS - (int)strlen(options[i])) / 2, options[i]);
+            attroff(A_REVERSE);
+        }
+        else {
+            mvprintw(2 + i, (COLS - (int)strlen(options[i])) / 2, options[i]);
+        }
+    }
+    refresh();
+}
+
+void menu() {
+    int highlight = 0;
+    int choice;
+    const char* options[] = { "Play", "Settings", "Exit" };
+    const int num_options = 3;
+
+    while (true) {
+        draw_menu("PAC-MAN", options, num_options, highlight);
+        choice = getch();
+        switch (choice) {
+        case KEY_UP:
+            highlight = (highlight == 0) ? num_options - 1 : highlight - 1;
+            break;
+        case KEY_DOWN:
+            highlight = (highlight == num_options - 1) ? 0 : highlight + 1;
+            break;
+        case '\n': // Enter
+            if (highlight == 0) {
+                clear();
+
+                refresh();
+                std::this_thread::sleep_for(std::chrono::seconds(2));
+            }
+            else if (highlight == 1) {
+                Settings();
+            }
+            else if (highlight == 2) {
+                endwin(); // Encerra a janela curses
+                exit(0);
+            }
+            break;
+        default:
+            break;
+        }
+    }
+}
+
+void Settings() {
+    int highlight = 0;
+    int choice;
+    const char* options[] = { "Controls", "Difficulty", "Back" };
+    const int num_options = 3;
+    int d;
+
+    while (true) {
+        draw_menu("Settings", options, num_options, highlight);
+        choice = getch();
+        switch (choice) {
+        case KEY_UP:
+            highlight = (highlight == 0) ? num_options - 1 : highlight - 1;
+            break;
+        case KEY_DOWN:
+            highlight = (highlight == num_options - 1) ? 0 : highlight + 1;
+            break;
+        case '\n': // Enter
+            if (highlight == 0) {
+                clear();
+                mvprintw(5, (COLS - 17) / 2, "Controls:");
+                mvprintw(7, (COLS - 25) / 2, "Move Up:    Arrow Up");
+                mvprintw(8, (COLS - 25) / 2, "Move Down:  Arrow Down");
+                mvprintw(9, (COLS - 25) / 2, "Move Left:  Arrow Left");
+                mvprintw(10, (COLS - 25) / 2, "Move Right: Arrow Right");
+                mvprintw(12, (COLS - 10) / 2, "Press any key to go back");
+                refresh();
+                getch();
+            }
+            else if (highlight == 1) {
+                clear();
+                mvprintw(5, (COLS - 20) / 2, "Choose Difficulty:");
+                mvprintw(7, (COLS - 20) / 2, "1. Easy");
+                mvprintw(8, (COLS - 20) / 2, "2. Medium");
+                mvprintw(9, (COLS - 20) / 2, "3. Hard");
+                refresh();
+                int difficulty = getch() - '0';
+                if (difficulty >= 1 && difficulty <= 3) {
+                    d = difficulty;
+                }
+            }
+            else if (highlight == 2) {
+                return;
+            }
+            break;
+        default:
+            break;
+        }
+    }
+}

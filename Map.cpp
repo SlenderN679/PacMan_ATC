@@ -41,115 +41,148 @@ void Map::drawMap() {
 	for (size_t y = 0; y < 36; ++y) {
 		for (size_t x = 0; x < 28; ++x) {
 			if (Entity::Rage()) {
-				switch (maze[y][x]) {
-				case WALL:
-					attron(COLOR_PAIR(8));
-					mvaddch(startY + y, startX + x, WALL_);
-					attroff(COLOR_PAIR(8));
-					break;
-				case BYTE:
-					attron(COLOR_PAIR(2));
-					mvaddch(startY + y, startX + x, maze[y][x]);
-					attroff(COLOR_PAIR(2));
-					break;
-				case BIT:
-					attron(COLOR_PAIR(8));
-					mvaddch(startY + y, startX + x, maze[y][x]);
-					attroff(COLOR_PAIR(8));
-					break;
-				case PACMAN:
-					attron(COLOR_PAIR(2));
-					mvaddch(startY + y, startX + x, maze[y][x]);
-					attroff(COLOR_PAIR(2));
-					break;
-				case GHOST:
-					attron(COLOR_PAIR(1));
-					mvaddch(startY + y, startX + x, maze[y][x]);
-					attroff(COLOR_PAIR(1));
-					break;
-				case PORTAL:
-					attron(COLOR_PAIR(3));
-					mvaddch(startY + y, startX + x, maze[y][x]);
-					attroff(COLOR_PAIR(3));
-					break;
-				default:
-					attron(COLOR_PAIR(8));
-					mvaddch(startY + y, startX + x, maze[y][x]);
-					attroff(COLOR_PAIR(8));
-					break;
-				}
-			} else {
-				switch (maze[y][x]) {
-				case WALL:
-					attron(COLOR_PAIR(1));
-					mvaddch(startY + y, startX + x, maze[y][x]);
-					attroff(COLOR_PAIR(1));
-					break;
-				case BYTE:
-					attron(COLOR_PAIR(2));
-					mvaddch(startY + y, startX + x, maze[y][x]);
-					attroff(COLOR_PAIR(2));
-					break;
-				case BIT:
-					attron(COLOR_PAIR(8));
-					mvaddch(startY + y, startX + x, maze[y][x]);
-					attroff(COLOR_PAIR(8));
-					break;
-				case PACMAN:
-					attron(COLOR_PAIR(2));
-					mvaddch(startY + y, startX + x, maze[y][x]);
-					attroff(COLOR_PAIR(2));
-					break;
-				case GHOST:
-					switch (Ghost::getNames({x,y})) {
-					case BLINKY:
-						attron(COLOR_PAIR(4));
-						mvaddch(startY + y, startX + x, maze[y][x]);
-						attroff(COLOR_PAIR(4));
+				if (y > 1) {
+					switch (maze[y][x]) {
+					case WALL:
+						attron(COLOR_PAIR(8));
+						mvaddch(startY + y, startX + x, WALL_);
+						attroff(COLOR_PAIR(8));
 						break;
-					case PINKY:
-						attron(COLOR_PAIR(5));
-						mvaddch(startY + y, startX + x, maze[y][x]);
-						attroff(COLOR_PAIR(5));
-						break;
-					case INKY:
-						attron(COLOR_PAIR(6));
-						mvaddch(startY + y, startX + x, maze[y][x]);
-						attroff(COLOR_PAIR(6));
-						break;
-					case CLYDE:
+					case BYTE:
 						attron(COLOR_PAIR(2));
 						mvaddch(startY + y, startX + x, maze[y][x]);
 						attroff(COLOR_PAIR(2));
 						break;
+					case BIT:
+						attron(COLOR_PAIR(8));
+						mvaddch(startY + y, startX + x, (chtype)250);
+						attroff(COLOR_PAIR(8));
+						break;
+					case PACMAN:
+						attron(COLOR_PAIR(2));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(2));
+						break;
+					case GHOST:
+						attron(COLOR_PAIR(1));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(1));
+						break;
+					case PORTAL:
+						attron(COLOR_PAIR(3));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(3));
+						break;
 					default:
+						attron(COLOR_PAIR(8));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(8));
+						break;
+					};
+				} else {
+					switch (y) {
+					case 0:
+						attron(COLOR_PAIR(6));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(6));
+						break;
+					case 1:
 						attron(COLOR_PAIR(4));
 						mvaddch(startY + y, startX + x, maze[y][x]);
 						attroff(COLOR_PAIR(4));
 						break;
+					default:
+						attron(COLOR_PAIR(8));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(8));
+						break;
+					};
+				}
+			} else {
+				if (y > 1) {
+					switch (maze[y][x]) {
+					case WALL:
+						attron(COLOR_PAIR(1));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(1));
+						break;
+					case BYTE:
+						attron(COLOR_PAIR(2));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(2));
+						break;
+					case BIT:
+						attron(COLOR_PAIR(8));
+						mvaddch(startY + y, startX + x, (chtype)250);
+						attroff(COLOR_PAIR(8));
+						break;
+					case PACMAN:
+						attron(COLOR_PAIR(2));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(2));
+						break;
+					case GHOST:
+						switch (Ghost::getNames({ x,y })) {
+						case BLINKY:
+							attron(COLOR_PAIR(4));
+							mvaddch(startY + y, startX + x, maze[y][x]);
+							attroff(COLOR_PAIR(4));
+							break;
+						case PINKY:
+							attron(COLOR_PAIR(5));
+							mvaddch(startY + y, startX + x, maze[y][x]);
+							attroff(COLOR_PAIR(5));
+							break;
+						case INKY:
+							attron(COLOR_PAIR(6));
+							mvaddch(startY + y, startX + x, maze[y][x]);
+							attroff(COLOR_PAIR(6));
+							break;
+						case CLYDE:
+							attron(COLOR_PAIR(2));
+							mvaddch(startY + y, startX + x, maze[y][x]);
+							attroff(COLOR_PAIR(2));
+							break;
+						default:
+							attron(COLOR_PAIR(4));
+							mvaddch(startY + y, startX + x, maze[y][x]);
+							attroff(COLOR_PAIR(4));
+							break;
+						}
+						break;
+					case PORTAL:
+						attron(COLOR_PAIR(3));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(3));
+						break;
+					default:
+						attron(COLOR_PAIR(8));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(8));
+						break;
 					}
-					break;
-				case PORTAL:
-					attron(COLOR_PAIR(3));
-					mvaddch(startY + y, startX + x, maze[y][x]);
-					attroff(COLOR_PAIR(3));
-					break;
-				default:
-					attron(COLOR_PAIR(8));
-					mvaddch(startY + y, startX + x, maze[y][x]);
-					attroff(COLOR_PAIR(8));
-					break;
+				} else {
+					switch (y){
+					case 0:
+						attron(COLOR_PAIR(6));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(6));
+						break;
+					case 1:
+						attron(COLOR_PAIR(4));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(4));
+						break;
+					default:
+						attron(COLOR_PAIR(8));
+						mvaddch(startY + y, startX + x, maze[y][x]);
+						attroff(COLOR_PAIR(8));
+						break;
+					};
 				}
 			}
-			/*if (maze[y][x] == WALL && Entity::Rage()) {
-				mvaddch(startY + y, startX + x, WALL_);
-			}
-			else {
-				mvaddch(startY + y, startX + x, maze[y][x]);
-			}*/
-			//mvaddch(startY + y, startX + x, maze[y][x]);
 		}
-	}
+	};
 	refresh();
 }
 //	/*system("cls");

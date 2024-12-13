@@ -479,6 +479,7 @@ void Ghost::Start() {
 		g->inHome = false;
 		Map::clearCell(g->Position());
 		g->GStart();
+		g->prevSpot = Map::getCell(g->Position());
 		x = 30;
 	}
 }

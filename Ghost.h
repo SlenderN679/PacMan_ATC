@@ -3,7 +3,7 @@
 #include "Entity.h"
 #include "_Directions.h"
 #include "list"
-class PacMan;
+class PacMan; // extern
 using namespace std;
 enum GstNames { BLINKY/*RED*/, PINKY/*PINK*/, INKY/*BLUE*/, CLYDE/*ORANGE*/ , X};
 class Ghost : public Entity {
