@@ -1,13 +1,13 @@
 #include "PacMan.h"
 Size_TXY pacmanStart = { 14 , 26 };
-PacMan::PacMan() : Entity(pacmanStart, PACMAN_E) {
+PacMan::PacMan() : DynamicEntity(pacmanStart, PACMAN_E) {
 	direction = RIGHT;
 	nextDirection = RIGHT;
 	lives = 3;
 	score = 0;
 	Map::addPacman(pacmanStart);
 }
-void PacMan::move() {
+Size_TXY PacMan::Move() {
 	Map::addNumber(score, 0, 0);
 	Map::addNumber(lives, 1, 0);
 	Size_TXY pos = Position();
@@ -32,30 +32,30 @@ void PacMan::move() {
 		break;
 	}
 	if (Map::getCell(pos) == GHOST) {
-		hit();
-		return;
+		Hit();
+		return pos;
 	} 
 	switch (Map::getCell({ pos.x + dir.x, pos.y + dir.y })) {
-	case BYTE:
-		score += 10;
-		rage = true;
-		Map::clearCell(pos);
-		pos = Entity::move(dir);
-		Dot::destroy(pos);
-		Map::clearCell(pos);
-		Map::addPacman(pos);
-		break;
-	case BIT:
-		score += 1;
-		/*Map::moveEntity(pos, Entity::move(dir), PACMAN, SPACE);*/
-		Map::clearCell(pos);
-		pos = Entity::move(dir);
-		Map::clearCell(pos);
-		Map::addPacman(pos);
-		break;
+	//case BYTE:
+	//	score += 10;
+	//	rage = true;
+	//	Map::clearCell(pos);
+	//	pos = DynamicEntity::Move(dir);
+	//	Dot::destroy(pos);
+	//	Map::clearCell(pos);
+	//	Map::addPacman(pos);
+	//	break;
+	//case BIT:
+	//	score += 1;
+	//	/*Map::moveEntity(pos, DynamicEntity::Move(dir), PACMAN, SPACE);*/
+	//	Map::clearCell(pos);
+	//	pos = DynamicEntity::Move(dir);
+	//	Map::clearCell(pos);
+	//	Map::addPacman(pos);
+	//	break;
 	case PORTAL:
 		Map::clearCell(pos);
-		pos = Entity::move({ 25 * (-dir.x), 0 });
+		pos = DynamicEntity::Move({ 25 * (-dir.x), 0 });
 		Map::addPacman(pos);
 		break;
 	case WALL:
@@ -64,25 +64,24 @@ void PacMan::move() {
 	case WALL_:
 		direction = nextDirection;
 		break;
-	case GHOST:
-		hit();
+	/*case GHOST:
+		Hit();
 		if (rage) {
 			Map::clearCell(pos);
-			pos = Entity::move(dir);
+			pos = DynamicEntity::Move(dir);
 			Map::clearCell(pos);
 			Map::addPacman(pos);
 		}
-		break;
+		break;*/
 	default:
-		Map::clearCell(pos);
-		pos = Entity::move(dir);
-		Map::addPacman(pos);
+		break;
 	}
+	return pos;
 }
-void PacMan::turn(Directions direction) {
+void PacMan::Turn(Directions direction) {
 	nextDirection = direction;
 }
-void PacMan::hit() {
+void PacMan::Hit() {
 	if (rage) {
 		score += 100;
 	} else {
@@ -106,6 +105,7 @@ int PacMan::getLives() const{
 int PacMan::getScore() const{
 	return score;
 }
-void PacMan::updateStats() {
+void PacMan::UpdateStats() {
 	//update stats
 }
+

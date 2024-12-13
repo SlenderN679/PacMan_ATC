@@ -1,10 +1,1 @@
-﻿  Menu.cpp
-  main.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\curses.h(190,9): warning C4005: 'MOUSE_MOVED': redefinição de macro
-  (compilando o arquivo fonte 'main.cpp')
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\wincontypes.h(103,9):
-      ver a definição anterior de "MOUSE_MOVED"
-  
-  Gerando Código...
-LINK : warning LNK4098: defaultlib 'LIBCMT' conflita com uso de outras bibliotecas; use /NODEFAULTLIB:library
-  PacMan.vcxproj -> C:\Users\Geral\Desktop\Escola\Arquitetura de Computadores\Programas\PacMan_ATC\PacMan_ATC\x64\Debug\PacMan.exe
+﻿  PacMan.vcxproj -> C:\Users\Geral\Desktop\Escola\Arquitetura de Computadores\Programas\PacMan_ATC\PacMan_ATC\x64\Debug\PacMan.exe

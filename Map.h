@@ -1,7 +1,7 @@
 #pragma once
 #include "_Size_TXY.h"	
-#include "Entity.h"
-#include "Object.h"
+#include "DynamicEntity.h"
+#include "StaticObject.h"
 #include "PacMan.h"
 #include "Ghost.h"
 #include "Dot.h"

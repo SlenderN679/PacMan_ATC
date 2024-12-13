@@ -40,7 +40,7 @@ void Map::drawMap() {
 	//--
 	for (size_t y = 0; y < 36; ++y) {
 		for (size_t x = 0; x < 28; ++x) {
-			if (Entity::Rage()) {
+			if (DynamicEntity::Rage()) {
 				if (y > 1) {
 					switch (maze[y][x]) {
 					case WALL:
@@ -189,7 +189,7 @@ void Map::drawMap() {
 //	maze[1][1] = (p.getLives()+48);
 //	for (size_t y = 0; y < 36; y++) {
 //		for (size_t x = 0; x < 28; x++) {
-//			if (maze[y][x] == WALL && Entity::Rage()) {
+//			if (maze[y][x] == WALL && DynamicEntity::Rage()) {
 //				cout << (char)WALL_;
 //			}
 //			else {

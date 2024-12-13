@@ -1,12 +1,12 @@
 #pragma once
 #include "PacMan.h"
-#include "Entity.h"
+#include "DynamicEntity.h"
 #include "_Directions.h"
 #include "list"
 class PacMan; // extern
 using namespace std;
 enum GstNames { BLINKY/*RED*/, PINKY/*PINK*/, INKY/*BLUE*/, CLYDE/*ORANGE*/ , X};
-class Ghost : public Entity {
+class Ghost : public DynamicEntity {
 	Directions direction;
 	const GstNames name;
 	static list<Ghost*> ghosts;
@@ -18,7 +18,7 @@ class Ghost : public Entity {
 	bool attack;
 public:
 	Ghost(Size_TXY coords, GstNames name);
-	void move(PacMan& p);
+	void Move(PacMan& p);
 	Directions getDirection() const;
 	GstNames getNames();
 	static GstNames getNames(Size_TXY pos);

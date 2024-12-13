@@ -1,8 +1,8 @@
 #pragma once
 #include "_Directions.h"
-#include "Object.h"
+#include "StaticObject.h"
 #include "Map.h"
-class Intersection : public Object {
+class Intersection : public StaticObject {
 	static list<Intersection> intersections;
 	list<Directions> outs;
 public:

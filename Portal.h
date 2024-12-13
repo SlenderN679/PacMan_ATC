@@ -1,9 +1,9 @@
 #pragma once
-#include "Object.h"
+#include "StaticObject.h"
 #include "list"
 using namespace std;
 enum Sides { P_RIGHT, P_LEFT };
-class Portal : public Object {
+class Portal : public StaticObject {
 	Sides side;
 	static list<Portal> portals;
 public:
