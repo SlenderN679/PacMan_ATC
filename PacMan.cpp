@@ -5,7 +5,6 @@ PacMan::PacMan() : DynamicEntity(pacmanStart, PACMAN_E) {
 	nextDirection = RIGHT;
 	lives = 3;
 	score = 0;
-	Map::addPacman(pacmanStart);
 }
 Size_TXY PacMan::Move() {
 	Map::addNumber(score, 0, 0);
@@ -36,52 +35,44 @@ Size_TXY PacMan::Move() {
 		return pos;
 	} 
 	switch (Map::getCell({ pos.x + dir.x, pos.y + dir.y })) {
-	//case BYTE:
-	//	score += 10;
-	//	rage = true;
-	//	Map::clearCell(pos);
-	//	pos = DynamicEntity::Move(dir);
-	//	Dot::destroy(pos);
-	//	Map::clearCell(pos);
-	//	Map::addPacman(pos);
-	//	break;
-	//case BIT:
-	//	score += 1;
-	//	/*Map::moveEntity(pos, DynamicEntity::Move(dir), PACMAN, SPACE);*/
-	//	Map::clearCell(pos);
-	//	pos = DynamicEntity::Move(dir);
-	//	Map::clearCell(pos);
-	//	Map::addPacman(pos);
-	//	break;
 	case PORTAL:
-		Map::clearCell(pos);
 		pos = DynamicEntity::Move({ 25 * (-dir.x), 0 });
-		Map::addPacman(pos);
 		break;
 	case WALL:
 		direction = nextDirection;
 		break;
-	case WALL_:
+	/*case WALL_:
 		direction = nextDirection;
-		break;
-	/*case GHOST:
-		Hit();
-		if (rage) {
-			Map::clearCell(pos);
-			pos = DynamicEntity::Move(dir);
-			Map::clearCell(pos);
-			Map::addPacman(pos);
-		}
 		break;*/
 	default:
 		break;
 	}
+	switch (CheckPos({ pos.x + dir.x, pos.y + dir.y })) {
+	case BYTE_E:
+		rage = true;
+		pos = DynamicEntity::Move(dir);
+		Dot::destroy(pos);
+		break;
+	case BIT_E:
+		score += 1;
+		pos = DynamicEntity::Move(dir);
+		Dot::destroy(pos);
+		break;
+	case GHOST_E:
+		pos = Hit();
+		if (rage) {
+			pos = DynamicEntity::Move(dir);
+		}
+		break;
+	default:
+		break;
+	};
 	return pos;
 }
 void PacMan::Turn(Directions direction) {
 	nextDirection = direction;
 }
-void PacMan::Hit() {
+Size_TXY PacMan::Hit() {
 	if (rage) {
 		score += 100;
 	} else {
@@ -89,12 +80,10 @@ void PacMan::Hit() {
 		if (lives == 0) {
 			//game over
 		} else {
-		 	Map::clearCell(Position());
 			PStart(pacmanStart);
-			Map::addPacman(Position());
 		}
 	}
-	
+	return Position();
 }
 Directions PacMan::getDirection() const{
 	return direction;
@@ -108,4 +97,5 @@ int PacMan::getScore() const{
 void PacMan::UpdateStats() {
 	//update stats
 }
+
 

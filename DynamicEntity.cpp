@@ -1,6 +1,7 @@
 #include "DynamicEntity.h"
 list<DynamicEntity*> DynamicEntity::entities;
 bool DynamicEntity::rage = false;
+
 Size_TXY DynamicEntity::GStart() {
 	coords = { 13, 14 };
 	return coords;
@@ -27,8 +28,18 @@ bool DynamicEntity::Rage() {
 void DynamicEntity::Calm() {
 	rage = false;
 }
-void DynamicEntity::timer(int seconds) {
-	for (int i = 0; i < seconds; i++) {
-		std::this_thread::sleep_for(std::chrono::seconds(1));
+EntTypes DynamicEntity::CheckPos(Size_TXY coords) {
+	for (DynamicEntity* e : entities) {
+		if (e->Position() == coords) {
+			return e->Type();
+		}
 	}
+	return XX;
+}
+void DynamicEntity::rage_timer(int seconds) {
+	
+}
+void DynamicEntity::StartRage() {
+	std::thread rageThread(&DynamicEntity::rage_timer, this, 15);
+	rageThread.detach();
 }

@@ -18,7 +18,7 @@ public:
 	PacMan();
 	Size_TXY Move();
 	void Turn(Directions direction);
-	void Hit();
+	Size_TXY Hit();
 	Directions getDirection() const;
 	int getLives() const;
 	int getScore() const;

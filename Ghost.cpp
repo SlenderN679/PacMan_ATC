@@ -6,7 +6,10 @@
 #include <chrono>
 #include <thread>
 using namespace std;
+
 list<Ghost*> Ghost::ghosts;
+PacMan* Ghost::p = nullptr;
+
 Ghost::Ghost(Size_TXY coords, GstNames name) : DynamicEntity(coords, GHOST_E), name(name) {
 	direction = RIGHT;
 	prevSpot = BIT;
@@ -35,17 +38,17 @@ Ghost::Ghost(Size_TXY coords, GstNames name) : DynamicEntity(coords, GHOST_E), n
 	std::thread scatterThread(&Ghost::scatter_timer, this, 30);
 	scatterThread.detach();
 }
-void Ghost::Move(PacMan& p) {
+void Ghost::Move() {
 	if (!inHome) {
-		Roam(p);
+		Roam();
 	} else {
 		Home();
 	}
 }
-void Ghost::Roam(PacMan& p) {
+void Ghost::Roam() {
 	Size_TXY pos = DynamicEntity::Position();
-	Size_TXY pacPos = p.Position();
-	Directions pacDir = p.getDirection();
+	Size_TXY pacPos = p->Position();
+	Directions pacDir = p->getDirection();
 	IntXY dir = { 0,0 };
 	Directions nextDir = direction;
 	//---
@@ -353,7 +356,7 @@ void Ghost::Roam(PacMan& p) {
 		break;
 	case PACMAN:
 		wallCount = 0;
-		p.Hit();
+		p->Hit();
 		if (rage) {
 			Map::clearCell(pos);
 			pos = GStart();
@@ -438,11 +441,11 @@ void Ghost::CreateGhosts() {
 	Ghost inky({ 11, 17 }, INKY);
 	Ghost clyde({ 15, 17 }, CLYDE);*/
 }
-void Ghost::MoveGhosts(PacMan& p) {
-	for (Ghost* g : ghosts) {
-		g->Move(p);
-	}
-}
+//void Ghost::MoveGhosts() {
+//	for (Ghost* g : ghosts) {
+//		g->Move(p);
+//	}
+//}
 void Ghost::scatter_timer(int seconds) {
 	while (true) {
 		if (!attack) {
@@ -490,4 +493,7 @@ GstNames Ghost::getNames(Size_TXY pos) {
 		}
 	}
 	return X;
+}
+void Ghost::AddPacMan(PacMan& p) {
+	Ghost::p = &p;
 }

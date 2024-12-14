@@ -5,7 +5,14 @@
 #include <fstream>
 #include <string>
 #include <curses.h>
-#define COLOR_ORANGE 10
+
+#define BRANCO 0
+#define AZUL 1
+#define AMARELO 2
+#define VERDE 3
+#define VERMELHO 4
+#define MAGENTA 5
+#define CIANO 6
 using namespace std;
 unsigned char Map::maze[36][28] = {};
 Map::Map() {
@@ -27,16 +34,13 @@ void Map::drawMap() {
 
 	int startY = (maxY - 36) / 2;  // Center the map vertically
 	int startX = (maxX - 28) / 2;  // Center the map horizontally
-	//start_color();
-	//init_color(COLOR_ORANGE, 1000, 647, 0);
-	init_pair(1, COLOR_BLUE, COLOR_BLACK);  // Wall
-	init_pair(2, COLOR_YELLOW, COLOR_BLACK);  // Byte,PacMan
-	init_pair(3, COLOR_GREEN, COLOR_BLACK);  // Portal
-	init_pair(4, COLOR_RED, COLOR_BLACK);  // Blinky
-	init_pair(5, COLOR_MAGENTA, COLOR_BLACK);  // Pinky
-	init_pair(6, COLOR_CYAN, COLOR_BLACK);  // Inky
-	//init_pair(7, COLOR_ORANGE, COLOR_BLACK);  // Clyde
-	init_pair(8, COLOR_WHITE, COLOR_BLACK);  // Bit
+	init_pair(AZUL, COLOR_BLUE, COLOR_BLACK);  // Wall
+	init_pair(AMARELO, COLOR_YELLOW, COLOR_BLACK);  // Byte,PacMan,Clyde
+	init_pair(VERDE, COLOR_GREEN, COLOR_BLACK);  // Portal
+	init_pair(VERMELHO, COLOR_RED, COLOR_BLACK);  // Blinky
+	init_pair(MAGENTA, COLOR_MAGENTA, COLOR_BLACK);  // Pinky
+	init_pair(CIANO, COLOR_CYAN, COLOR_BLACK);  // Inky
+	init_pair(BRANCO, COLOR_WHITE, COLOR_BLACK);  // Bit
 	//--
 	for (size_t y = 0; y < 36; ++y) {
 		for (size_t x = 0; x < 28; ++x) {
@@ -44,57 +48,57 @@ void Map::drawMap() {
 				if (y > 1) {
 					switch (maze[y][x]) {
 					case WALL:
-						attron(COLOR_PAIR(8));
+						attron(COLOR_PAIR(BRANCO));
 						mvaddch(startY + y, startX + x, WALL_);
-						attroff(COLOR_PAIR(8));
+						attroff(COLOR_PAIR(BRANCO));
 						break;
 					case BYTE:
-						attron(COLOR_PAIR(2));
-						mvaddch(startY + y, startX + x, maze[y][x]);
-						attroff(COLOR_PAIR(2));
+						attron(COLOR_PAIR(AMARELO));
+						mvaddch(startY + y, startX + x, ACS_DIAMOND);
+						attroff(COLOR_PAIR(AMARELO));
 						break;
 					case BIT:
-						attron(COLOR_PAIR(8));
+						attron(COLOR_PAIR(BRANCO));
 						mvaddch(startY + y, startX + x, (chtype)250);
-						attroff(COLOR_PAIR(8));
+						attroff(COLOR_PAIR(BRANCO));
 						break;
-					case PACMAN:
+					/*case PACMAN:
 						attron(COLOR_PAIR(2));
 						mvaddch(startY + y, startX + x, maze[y][x]);
 						attroff(COLOR_PAIR(2));
-						break;
+						break;*/
 					case GHOST:
-						attron(COLOR_PAIR(1));
+						attron(COLOR_PAIR(AZUL));
 						mvaddch(startY + y, startX + x, maze[y][x]);
-						attroff(COLOR_PAIR(1));
+						attroff(COLOR_PAIR(AZUL));
 						break;
 					case PORTAL:
-						attron(COLOR_PAIR(3));
+						attron(COLOR_PAIR(VERDE));
 						mvaddch(startY + y, startX + x, maze[y][x]);
-						attroff(COLOR_PAIR(3));
+						attroff(COLOR_PAIR(VERDE));
 						break;
 					default:
-						attron(COLOR_PAIR(8));
+						attron(COLOR_PAIR(BRANCO));
 						mvaddch(startY + y, startX + x, maze[y][x]);
-						attroff(COLOR_PAIR(8));
+						attroff(COLOR_PAIR(BRANCO));
 						break;
 					};
 				} else {
 					switch (y) {
 					case 0:
-						attron(COLOR_PAIR(6));
+						attron(COLOR_PAIR(CIANO));
 						mvaddch(startY + y, startX + x, maze[y][x]);
-						attroff(COLOR_PAIR(6));
+						attroff(COLOR_PAIR(CIANO));
 						break;
 					case 1:
-						attron(COLOR_PAIR(4));
+						attron(COLOR_PAIR(VERMELHO));
 						mvaddch(startY + y, startX + x, maze[y][x]);
-						attroff(COLOR_PAIR(4));
+						attroff(COLOR_PAIR(VERMELHO));
 						break;
 					default:
-						attron(COLOR_PAIR(8));
+						attron(COLOR_PAIR(BRANCO));
 						mvaddch(startY + y, startX + x, maze[y][x]);
-						attroff(COLOR_PAIR(8));
+						attroff(COLOR_PAIR(BRANCO));
 						break;
 					};
 				}
@@ -102,81 +106,81 @@ void Map::drawMap() {
 				if (y > 1) {
 					switch (maze[y][x]) {
 					case WALL:
-						attron(COLOR_PAIR(1));
+						attron(COLOR_PAIR(AZUL));
 						mvaddch(startY + y, startX + x, maze[y][x]);
-						attroff(COLOR_PAIR(1));
+						attroff(COLOR_PAIR(AZUL));
 						break;
 					case BYTE:
-						attron(COLOR_PAIR(2));
-						mvaddch(startY + y, startX + x, maze[y][x]);
-						attroff(COLOR_PAIR(2));
+						attron(COLOR_PAIR(AMARELO));
+						mvaddch(startY + y, startX + x, ACS_DIAMOND);
+						attroff(COLOR_PAIR(AMARELO));
 						break;
 					case BIT:
-						attron(COLOR_PAIR(8));
+						attron(COLOR_PAIR(BRANCO));
 						mvaddch(startY + y, startX + x, (chtype)250);
-						attroff(COLOR_PAIR(8));
+						attroff(COLOR_PAIR(BRANCO));
 						break;
-					case PACMAN:
+					/*case PACMAN:
 						attron(COLOR_PAIR(2));
 						mvaddch(startY + y, startX + x, maze[y][x]);
 						attroff(COLOR_PAIR(2));
-						break;
+						break;*/
 					case GHOST:
 						switch (Ghost::getNames({ x,y })) {
 						case BLINKY:
-							attron(COLOR_PAIR(4));
+							attron(COLOR_PAIR(VERMELHO));
 							mvaddch(startY + y, startX + x, maze[y][x]);
-							attroff(COLOR_PAIR(4));
+							attroff(COLOR_PAIR(VERMELHO));
 							break;
 						case PINKY:
-							attron(COLOR_PAIR(5));
+							attron(COLOR_PAIR(MAGENTA));
 							mvaddch(startY + y, startX + x, maze[y][x]);
-							attroff(COLOR_PAIR(5));
+							attroff(COLOR_PAIR(MAGENTA));
 							break;
 						case INKY:
-							attron(COLOR_PAIR(6));
+							attron(COLOR_PAIR(CIANO));
 							mvaddch(startY + y, startX + x, maze[y][x]);
-							attroff(COLOR_PAIR(6));
+							attroff(COLOR_PAIR(CIANO));
 							break;
 						case CLYDE:
-							attron(COLOR_PAIR(2));
+							attron(COLOR_PAIR(AMARELO));
 							mvaddch(startY + y, startX + x, maze[y][x]);
-							attroff(COLOR_PAIR(2));
+							attroff(COLOR_PAIR(AMARELO));
 							break;
 						default:
-							attron(COLOR_PAIR(4));
+							attron(COLOR_PAIR(BRANCO));
 							mvaddch(startY + y, startX + x, maze[y][x]);
-							attroff(COLOR_PAIR(4));
+							attroff(COLOR_PAIR(BRANCO));
 							break;
 						}
 						break;
 					case PORTAL:
-						attron(COLOR_PAIR(3));
+						attron(COLOR_PAIR(VERDE));
 						mvaddch(startY + y, startX + x, maze[y][x]);
-						attroff(COLOR_PAIR(3));
+						attroff(COLOR_PAIR(VERDE));
 						break;
 					default:
-						attron(COLOR_PAIR(8));
+						attron(COLOR_PAIR(BRANCO));
 						mvaddch(startY + y, startX + x, maze[y][x]);
-						attroff(COLOR_PAIR(8));
+						attroff(COLOR_PAIR(BRANCO));
 						break;
 					}
 				} else {
 					switch (y){
 					case 0:
-						attron(COLOR_PAIR(6));
+						attron(COLOR_PAIR(CIANO));
 						mvaddch(startY + y, startX + x, maze[y][x]);
-						attroff(COLOR_PAIR(6));
+						attroff(COLOR_PAIR(CIANO));
 						break;
 					case 1:
-						attron(COLOR_PAIR(4));
+						attron(COLOR_PAIR(VERMELHO));
 						mvaddch(startY + y, startX + x, maze[y][x]);
-						attroff(COLOR_PAIR(4));
+						attroff(COLOR_PAIR(VERMELHO));
 						break;
 					default:
-						attron(COLOR_PAIR(8));
+						attron(COLOR_PAIR(BRANCO));
 						mvaddch(startY + y, startX + x, maze[y][x]);
-						attroff(COLOR_PAIR(8));
+						attroff(COLOR_PAIR(BRANCO));
 						break;
 					};
 				}

@@ -16,16 +16,15 @@ Map map;
 PacMan_UI pacman;
 
 static void rage_timer(int seconds) {
-    while (true) {
-        if (DynamicEntity::Rage()) {
-            for (int i = 0; i < seconds; i++) {
-                std::this_thread::sleep_for(std::chrono::seconds(1));
-            }
-            DynamicEntity::Calm();
-        }
-    }
+	while (true) {
+		if (DynamicEntity::Rage()) {
+			for (int i = 0; i < seconds; i++) {
+				std::this_thread::sleep_for(std::chrono::seconds(1));
+			}
+			DynamicEntity::Calm();
+		}
+	}
 }
-
 void processInput() {
     while (true) {
         if (GetAsyncKeyState(VK_UP) & 0x8000) {
@@ -59,21 +58,28 @@ int main() {
 	Intersection::CreateIntersections();
     Dot::CreateDots();
 	Ghost::CreateGhosts();
+	Ghost::AddPacMan(pacman);
     map.addPortal({ 0, 17 });
     map.addPortal({ 27, 17 });
     //---
     map.drawMap();
     //---
     std::thread inputThread(processInput);
-    std::thread rageThread(rage_timer, 15);
     std::thread ghostStart(&Ghost::Start);
+	std::thread rageThread(rage_timer, 15);
     this_thread::sleep_for(chrono::milliseconds(1000));
     //---
+	bool r = false;
+	//---
     while ((pacman.getLives()>0)&&(Dot::DotReamining()>0)) {
         //pacman.Move();
-		Ghost::MoveGhosts(pacman);
+		/*Ghost::MoveGhosts(pacman);*/
 		pacman.Draw();
         //map.drawMap();
+		if (r != DynamicEntity::Rage()) {
+			map.drawMap();
+			r = DynamicEntity::Rage();
+		}
         this_thread::sleep_for(chrono::milliseconds(250));
 		refresh();
     }
@@ -130,7 +136,7 @@ int main() {
   refresh();
     //---
     inputThread.join();
-    rageThread.join();
 	ghostStart.join();
+	rageThread.join();
     return 0;
 }
