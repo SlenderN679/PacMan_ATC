@@ -49,3 +49,11 @@ void DynamicEntity::StartRage() {
 list<DynamicEntity*> DynamicEntity::EntityList() {
 	return entities;
 }
+void DynamicEntity::RemoveEntity(DynamicEntity* e) {
+	for (auto it = entities.begin(); it != entities.end(); it++) {
+		if (*it == e) {
+			entities.erase(it);
+			break;
+		}
+	}
+}

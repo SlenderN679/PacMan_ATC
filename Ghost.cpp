@@ -12,11 +12,12 @@ PacMan* Ghost::p = nullptr;
 
 Ghost::Ghost(Size_TXY coords, GstNames name) : DynamicEntity(coords, GHOST_E), name(name) {
 	direction = RIGHT;
-	prevSpot = BIT;
 	wallCount = 0;
 	attack = false;
 	inHome = true;
-	//ghosts.push_back(this);
+	leave = false;
+	prevSpot = SPACE;
+	ghosts.push_back(this);
 	switch (name){
 	case BLINKY:
 		scatter = { 25, 0 };
@@ -41,7 +42,14 @@ void Ghost::Move() {
 	if (!inHome) {
 		Roam();
 	} else {
-		Home();
+		if (leave) {
+			attack = true;
+			inHome = false;
+			GStart();
+		} else {
+			Home();
+		}
+		
 	}
 }
 void Ghost::Roam() {
@@ -121,23 +129,15 @@ void Ghost::Roam() {
 				if (pos.x < target.x) {
 					nextDir = RIGHT;
 					choice = true;
-				}
-				else if (pos.x > target.x) {
+				} else if (pos.x > target.x) {
 					nextDir = LEFT;
 					choice = true;
-				}/*else if(pos.y > target.y) {
-					nextDir = UP;
-					choice = true;
-				}*/else if (pos.x == target.x) {
+				} else if (pos.x == target.x) {
 					nextDir = UP;
 					choice = true;
 				}
 				break;
 			case DOWN:
-				/*if (pos.y < target.y) {
-					nextDir = DOWN;
-					choice = true;
-				} else*/
 				if (pos.x > target.x) {
 					nextDir = LEFT;
 					choice = true;
@@ -152,10 +152,6 @@ void Ghost::Roam() {
 				}
 				break;
 			case LEFT:
-				/*if (pos.x > target.x) {
-					nextDir = LEFT;
-					choice = true;
-				} else*/
 				if (pos.y <= target.y) {
 					nextDir = DOWN;
 					choice = true;
@@ -177,11 +173,7 @@ void Ghost::Roam() {
 				if (pos.y < target.y) {
 					nextDir = DOWN;
 					choice = true;
-				}/* else if (pos.x < target.x) {
-					nextDir = RIGHT;
-					choice = true;
-				}*/
-				else if (pos.y == target.y) {
+				} else if (pos.y == target.y) {
 					nextDir = RIGHT;
 					choice = true;
 				}
@@ -210,98 +202,11 @@ void Ghost::Roam() {
 	}
 	unsigned char currSpot = Map::getCell({ pos.x + dir.x, pos.y + dir.y });
 	switch (currSpot) {
-	case BYTE:
-		wallCount = 0;
-		Map::clearCell(pos);
-		Map::add(pos, prevSpot);
-		prevSpot = BYTE;
-		pos = DynamicEntity::Move(dir);
-		Map::clearCell(pos);
-		Map::addGhost(pos);
-		break;
-	case BIT:
-		wallCount = 0;
-		Map::clearCell(pos);
-		Map::add(pos, prevSpot);
-		prevSpot = BIT;
-		pos = DynamicEntity::Move(dir);
-		Map::clearCell(pos);
-		Map::addGhost(pos);
-		break;
 	case PORTAL:
 		wallCount = 0;
-		Map::clearCell(pos);
-		Map::add(pos, prevSpot);
-		prevSpot = Map::getCell({ pos.x + (25 * (-dir.x)), pos.y });
 		pos = DynamicEntity::Move({ 25 * (-dir.x), 0 });
-		Map::addGhost(pos);
 		break;
-	case GHOST:
-		wallCount = 0;
-		switch (direction)
-		{
-		case UP:
-			direction = DOWN;
-			break;
-		case DOWN:
-			direction = UP;
-			break;
-		case LEFT:
-			direction = RIGHT;
-			break;
-		case RIGHT:
-			direction = LEFT;
-			break;
-		default:
-			break;
-		}
 	case WALL:
-		wallCount++;
-		switch (direction)
-		{
-		case UP:
-			if ((pos.x <= target.x) && ((Map::getCell({ pos.x + 1, pos.y }) != (WALL)) || (Map::getCell({ pos.x + 1, pos.y }) != (WALL_)))) {
-				direction = RIGHT;
-			}
-			else if ((pos.x > target.x) && ((Map::getCell({ pos.x - 1, pos.y }) != (WALL)) || (Map::getCell({ pos.x - 1, pos.y }) != (WALL_)))) {
-				direction = LEFT;
-			}
-			else {
-				direction = DOWN;
-			}
-			break;
-		case DOWN:
-			if ((pos.x <= target.x) && ((Map::getCell({ pos.x + 1, pos.y }) != (WALL)) || (Map::getCell({ pos.x + 1, pos.y }) != (WALL_)))) {
-				direction = RIGHT;
-			} else if ((pos.x > target.x) && ((Map::getCell({ pos.x - 1, pos.y }) != (WALL)) || (Map::getCell({ pos.x - 1, pos.y }) != (WALL_)))) {
-				direction = LEFT;
-			} else {
-				direction = UP;
-			}
-			break;
-		case LEFT:
-			if ((pos.y <= target.y) && ((Map::getCell({ pos.x , pos.y + 1 }) != (WALL)) || (Map::getCell({ pos.x , pos.y + 1 }) != (WALL_)))) {
-				direction = DOWN;
-			} else if ((pos.y > target.y) && ((Map::getCell({ pos.x , pos.y - 1 }) != (WALL)) || (Map::getCell({ pos.x , pos.y - 1 }) != (WALL_)))) {
-				direction = UP;
-			} else {
-				direction = RIGHT;
-			}
-			break;
-		case RIGHT:
-			if ((pos.y <= target.y) && ((Map::getCell({ pos.x , pos.y + 1 }) != (WALL)) || (Map::getCell({ pos.x , pos.y + 1 }) != (WALL_)))) {
-				direction = DOWN;
-			} else if ((pos.y > target.y) && ((Map::getCell({ pos.x , pos.y - 1 }) != (WALL)) || (Map::getCell({ pos.x , pos.y - 1 }) != (WALL_)))) {
-				direction = UP;
-			} else {
-				direction = LEFT;
-			}
-			break;
-		default:
-			break;
-		}
-		break;
-	case WALL_:
 		wallCount++;
 		switch (direction)
 		{
@@ -342,7 +247,7 @@ void Ghost::Roam() {
 			if ((pos.y <= target.y) && ((Map::getCell({ pos.x , pos.y + 1 }) != (WALL)) || (Map::getCell({ pos.x , pos.y + 1 }) != (WALL_)))) {
 				direction = DOWN;
 			}
-			else if ((pos.y > target.y) && ((Map::getCell({ pos.x , pos.y + 1 }) != (WALL)) || (Map::getCell({ pos.x , pos.y + 1 }) != (WALL_)))) {
+			else if ((pos.y > target.y) && ((Map::getCell({ pos.x , pos.y - 1 }) != (WALL)) || (Map::getCell({ pos.x , pos.y - 1 }) != (WALL_)))) {
 				direction = UP;
 			}
 			else {
@@ -353,25 +258,57 @@ void Ghost::Roam() {
 			break;
 		}
 		break;
-	case PACMAN:
-		wallCount = 0;
-		p->Hit();
-		if (rage) {
-			Map::clearCell(pos);
-			pos = GStart();
-			Map::addGhost(pos);
-		}
-		else {
-			Map::clearCell(pos);
-			Map::add(pos, prevSpot);
-			prevSpot = SPACE;
-			pos = DynamicEntity::Move(dir);
-			Map::clearCell(pos);
-			Map::addGhost(pos);
-		}
 	default:
+		prevSpot = SPACE;
+		switch (CheckPos({ pos.x + dir.x, pos.y + dir.y })) {
+		case BYTE_E:
+			prevSpot = BYTE;
+			wallCount = 0;
+			pos = DynamicEntity::Move(dir);
+			break;
+		case BIT_E:
+			prevSpot = BIT;
+			wallCount = 0;
+			pos = DynamicEntity::Move(dir);
+			break;
+		case GHOST_E:
+			wallCount = 0;
+			switch (direction)
+			{
+			case UP:
+				direction = DOWN;
+				break;
+			case DOWN:
+				direction = UP;
+				break;
+			case LEFT:
+				direction = RIGHT;
+				break;
+			case RIGHT:
+				direction = LEFT;
+				break;
+			default:
+				break;
+			};
+			break;
+		case PACMAN_E:
+			wallCount = 0;
+			p->Hit();
+			if (rage) {
+				pos = GStart();
+			}
+			else {
+				pos = DynamicEntity::Move(dir);
+			}
+			break;
+		default:
+			wallCount = 0;
+			pos = DynamicEntity::Move(dir);
+			break;
+		};
 		break;
-	}
+	};
+	
 	if (wallCount >= 3) {
 		switch (direction)
 		{
@@ -403,17 +340,11 @@ void Ghost::Home() {
 	switch (direction)
 	{
 	case LEFT:
-		Map::clearCell(pos);
 		pos = DynamicEntity::Move({ -1,0 });
-		Map::clearCell(pos);
-		Map::addGhost(pos);
 		direction = RIGHT;
 		break;
 	case RIGHT:
-		Map::clearCell(pos);
 		pos = DynamicEntity::Move({ 1,0 });
-		Map::clearCell(pos);
-		Map::addGhost(pos);
 		direction = LEFT;
 		break;
 	default:
@@ -445,19 +376,13 @@ void Ghost::start_timer(int seconds) {
 	inHome = false;
 	GStart();
 }
-void Ghost::Start() {
+void Ghost::StartGhosts() {
 	int x = 0;
 	for (Ghost* g : ghosts) {
-		//std::thread scatterThread(&Ghost::start_timer, g, x);
-		//g->start_timer(x);
 		for (int i = 0; i < x; i++) {
 			std::this_thread::sleep_for(std::chrono::seconds(1));
 		}
-		g->attack = true;
-		g->inHome = false;
-		Map::clearCell(g->Position());
-		g->GStart();
-		g->prevSpot = Map::getCell(g->Position());
+		g->leave = true;
 		x = 30;
 	}
 }

@@ -10,7 +10,9 @@ void Ghost_UI::Update() {
 	int startY = (maxY - 36) / 2;  // Center the map vertically
 	int startX = (maxX - 28) / 2;  // Center the map horizontally
 	Size_TXY coords = Ghost::Position();
-	mvaddch(startY + coords.y, startX + coords.x, SPACE);
+	if (prevSpot == SPACE) {
+		mvaddch(startY + coords.y, startX + coords.x, SPACE);
+	}
 	Ghost::Move();
 	coords = Ghost::Position();
 	Draw(coords);
@@ -25,34 +27,40 @@ void Ghost_UI::Draw(Size_TXY coords) {
 	init_pair(VERMELHO, COLOR_RED, COLOR_BLACK);  // Blinky
 	init_pair(MAGENTA, COLOR_MAGENTA, COLOR_BLACK);  // Pinky
 	init_pair(CIANO, COLOR_CYAN, COLOR_BLACK);  // Inky
-
-	switch (getNames()) {
-	case BLINKY:
-		attron(COLOR_PAIR(VERMELHO));
+	if (rage) {
+		attron(COLOR_PAIR(AZUL));
 		mvaddch(startY + coords.y, startX + coords.x, GHOST);
-		attroff(COLOR_PAIR(VERMELHO));
-		break;
-	case PINKY:
-		attron(COLOR_PAIR(MAGENTA));
-		mvaddch(startY + coords.y, startX + coords.x, GHOST);
-		attroff(COLOR_PAIR(MAGENTA));
-		break;
-	case INKY:
-		attron(COLOR_PAIR(CIANO));
-		mvaddch(startY + coords.y, startX + coords.x, GHOST);
-		attroff(COLOR_PAIR(CIANO));
-		break;
-	case CLYDE:
-		attron(COLOR_PAIR(AMARELO));
-		mvaddch(startY + coords.y, startX + coords.x, GHOST);
-		attroff(COLOR_PAIR(AMARELO));
-		break;
-	default:
-		break;
-	};
+		attroff(COLOR_PAIR(AZUL));
+	}
+	else {
+		switch (getNames()) {
+		case BLINKY:
+			attron(COLOR_PAIR(VERMELHO));
+			mvaddch(startY + coords.y, startX + coords.x, GHOST);
+			attroff(COLOR_PAIR(VERMELHO));
+			break;
+		case PINKY:
+			attron(COLOR_PAIR(MAGENTA));
+			mvaddch(startY + coords.y, startX + coords.x, GHOST);
+			attroff(COLOR_PAIR(MAGENTA));
+			break;
+		case INKY:
+			attron(COLOR_PAIR(CIANO));
+			mvaddch(startY + coords.y, startX + coords.x, GHOST);
+			attroff(COLOR_PAIR(CIANO));
+			break;
+		case CLYDE:
+			attron(COLOR_PAIR(AMARELO));
+			mvaddch(startY + coords.y, startX + coords.x, GHOST);
+			attroff(COLOR_PAIR(AMARELO));
+			break;
+		default:
+			break;
+		};
+	}
 }
 void Ghost_UI::CreateGhosts() {
-	ghosts.push_back(new Ghost_UI({ 13, 15 }, BLINKY));
+	ghosts.push_back(new Ghost_UI({ 13, 14 }, BLINKY));
 	ghosts.push_back(new Ghost_UI({ 13, 17 }, PINKY));
 	ghosts.push_back(new Ghost_UI({ 11, 17 }, INKY));
 	ghosts.push_back(new Ghost_UI({ 15, 17 }, CLYDE));

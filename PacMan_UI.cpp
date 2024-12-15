@@ -1,7 +1,7 @@
 #include "PacMan_UI.h"
 
 PacMan_UI::PacMan_UI() : PacMan() {
-	/*sprites.push_back(this);*/
+	
 }
 void PacMan_UI::Update() {
 	int maxY, maxX;
@@ -41,6 +41,3 @@ void PacMan_UI::Draw(Size_TXY coords) {
 Size_TXY PacMan_UI::Start() {
 	return PacMan::Start();
 }
-//list<Drawing*> PacMan_UI::SpriteList() {
-//	return sprites;
-//}

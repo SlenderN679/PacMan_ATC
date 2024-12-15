@@ -39,8 +39,9 @@ public:
 	static bool Rage();
 	static void Calm();
 	static void timer(int seconds);
-	EntTypes CheckPos(Size_TXY coords);
+	static EntTypes CheckPos(Size_TXY coords);
 	void rage_timer(int seconds);
 	void StartRage();
 	static list<DynamicEntity*> EntityList();
+	static void RemoveEntity(DynamicEntity* e);
 };

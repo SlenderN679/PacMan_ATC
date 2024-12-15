@@ -5,10 +5,11 @@ PacMan::PacMan() : DynamicEntity(reset, PACMAN_E) {
 	nextDirection = RIGHT;
 	lives = 3;
 	score = 0;
+	pacmanStart = reset;
 }
 Size_TXY PacMan::Move() {
-	Map::addNumber(score, 0, 0);
-	Map::addNumber(lives, 1, 0);
+	//Map::addNumber(score, 0, 0);
+	//Map::addNumber(lives, 1, 0);
 	Size_TXY pos = Position();
 	IntXY dir = { 0,0 };
 	for (Directions i : Intersection::isIntersection(pos)) {
@@ -30,43 +31,43 @@ Size_TXY PacMan::Move() {
 		dir = { 1 , 0 };
 		break;
 	}
-	if (Map::getCell(pos) == GHOST) {
+	if (CheckPos({ pos.x + dir.x, pos.y + dir.y }) == GHOST_E) {
 		Hit();
 		return pos;
-	} 
+	} else if ((CheckPos({ pos.x + dir.x, pos.y + dir.y }) == BIT_E) || (CheckPos({ pos.x + dir.x, pos.y + dir.y }) == BYTE_E)) {
+		Dot::destroy(pos);
+	}
 	switch (Map::getCell({ pos.x + dir.x, pos.y + dir.y })) {
 	case PORTAL:
-		pos = DynamicEntity::Move({ 26 * (-dir.x), 0 });
+		pos = DynamicEntity::Move({ 25 * (-dir.x), 0 });
 		break;
 	case WALL:
 		direction = nextDirection;
 		break;
-	/*case WALL_:
-		direction = nextDirection;
-		break;*/
 	default:
+		switch (CheckPos({ pos.x + dir.x, pos.y + dir.y })) {
+		case BYTE_E:
+			rage = true;
+			pos = DynamicEntity::Move(dir);
+			Dot::destroy(pos);
+			break;
+		case BIT_E:
+			score += 1;
+			pos = DynamicEntity::Move(dir);
+			Dot::destroy(pos);
+			break;
+		case GHOST_E:
+			pos = Hit();
+			if (rage) {
+				pos = DynamicEntity::Move(dir);
+			}
+			break;
+		default:
+			pos = DynamicEntity::Move(dir);
+			break;
+		};
 		break;
 	}
-	switch (CheckPos({ pos.x + dir.x, pos.y + dir.y })) {
-	case BYTE_E:
-		rage = true;
-		pos = DynamicEntity::Move(dir);
-		Dot::destroy(pos);
-		break;
-	case BIT_E:
-		score += 1;
-		pos = DynamicEntity::Move(dir);
-		Dot::destroy(pos);
-		break;
-	case GHOST_E:
-		pos = Hit();
-		if (rage) {
-			pos = DynamicEntity::Move(dir);
-		}
-		break;
-	default:
-		break;
-	};
 	return pos;
 }
 void PacMan::Turn(Directions direction) {

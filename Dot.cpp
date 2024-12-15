@@ -9,14 +9,12 @@ bool Dot::CreateDots() {
             if ((Map::getCell({x,y}) == SPACE)&&((!(0 <= x && x < 5 && 12 < y && y < 16)) && (!(0 <= x && x < 5 && 18 < y && y < 22)) && (!(22 < x && x <= 27 && 12 < y && y < 16)) && (!(22 < x && x <= 27 && 18 < y && y < 22)) && (!(10 < x && x < 17 && 14 < y && y < 19)))) {
 				if ((x==1||x==26)&&(y==6||y==26)) {
 					Dot* dot = new Dot({ x, y }, BYTE_E);
-					Map::addByte({ x, y });
 					if (dot == nullptr) {
 						return false;
 					}
 				}
 				else {
 					Dot* dot = new Dot({ x, y }, BIT_E);
-					Map::addBit({ x, y });
 					if (dot == nullptr) {
 						return false;
 					}
@@ -29,6 +27,7 @@ bool Dot::CreateDots() {
 bool Dot::destroy(Size_TXY pos) {
 	for (auto it = dots.begin(); it != dots.end(); it++) {
 		if ((*it)->Position() == pos) {
+			DynamicEntity::RemoveEntity(*it);
 			(*it)->removeFromDerivedList();
 			dots.erase(it);
 			//delete* it;

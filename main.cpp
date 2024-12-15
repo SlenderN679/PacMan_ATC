@@ -64,7 +64,6 @@ int main() {
     Dot_UI::CreateDots();
 	Ghost_UI::CreateGhosts();
 	Ghost::AddPacMan(pacman);
-	Ghost::Start();
     map.addPortal({ 0, 17 });
     map.addPortal({ 27, 17 });
 	//---
@@ -74,7 +73,7 @@ int main() {
 		sprites.push_back(g);
 	}
 	for (Dot_UI* d : Dot_UI::DotList()) {
-		sprites.push_front(d);
+		sprites.push_back(d);
 	}
     //---
     map.drawMap();
@@ -90,14 +89,15 @@ int main() {
 	refresh();
     //---
     std::thread inputThread(processInput);
-    std::thread ghostStart(&Ghost::Start);
+    std::thread ghostStart(&Ghost::StartGhosts);
 	std::thread rageThread(rage_timer, 15);
     this_thread::sleep_for(chrono::milliseconds(1000));
     //---
 	bool r = false;
 	//---
     while ((pacman.getLives()>0)&&(Dot::DotReamining()>0)&&(!ending)) {
-		for (Drawing* d : sprites) {
+		for (auto it = sprites.rbegin(); it != sprites.rend(); ++it) {
+			Drawing* d = *it;
 			if (d == nullptr) {
 				sprites.remove(d);
 			}

@@ -38,9 +38,9 @@ void Dot_UI::Update() {
 	int startY = (maxY - 36) / 2;  // Center the map vertically
 	int startX = (maxX - 28) / 2;  // Center the map horizontally
 	Size_TXY coords = Dot::Position();
-	//mvaddch(startY + coords.y, startX + coords.x, SPACE);
-	//coords = Dot::Position();
-	Draw(coords);
+	if ((CheckPos(coords) != PACMAN_E) && (CheckPos(coords) != GHOST_E)) {
+		Draw(coords);
+	}
 }
 Size_TXY Dot_UI::Start() {
 	return Dot::Start();

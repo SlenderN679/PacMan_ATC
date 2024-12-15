@@ -14,11 +14,13 @@ class Ghost : public DynamicEntity {
 	static list<Ghost*> ghosts;
 	Size_TXY target;
 	Size_TXY scatter;
-	unsigned char prevSpot;
 	bool inHome;
 	int wallCount;
 	bool attack;
 	static PacMan* p;
+	bool leave;
+protected:
+	unsigned char prevSpot;
 public:
 	Ghost(Size_TXY coords, GstNames name);
 	void Move();
@@ -29,6 +31,6 @@ public:
 	void Roam();
 	void scatter_timer(int seconds);
 	void start_timer(int seconds);
-	static void Start();
+	static void StartGhosts();
 	static void AddPacMan(PacMan& p);
 };
