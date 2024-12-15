@@ -5,7 +5,8 @@
 #include <curses.h>
 #include "Map.h"
 #include "PacMan_UI.h"
-#include "Ghost.h"
+#include "Ghost_UI.h"
+#include "Dot_UI.h"
 #include "Wall.h"
 #include "Intersection.h"
 #include "Menu.h"
@@ -14,7 +15,7 @@ using namespace std;
 
 Map map;
 PacMan_UI pacman;
-
+bool ending = false;
 static void rage_timer(int seconds) {
 	while (true) {
 		if (DynamicEntity::Rage()) {
@@ -39,6 +40,10 @@ void processInput() {
         if (GetAsyncKeyState(VK_RIGHT) & 0x8000) {
             pacman.Turn(RIGHT);
         }
+		if (GetAsyncKeyState(VK_ESCAPE) & 0x8000) {
+			ending = true;
+			break;
+		}
         std::this_thread::sleep_for(std::chrono::milliseconds(50));
     }
 }
@@ -56,13 +61,33 @@ int main() {
     //---
     Wall::CreateWalls();
 	Intersection::CreateIntersections();
-    Dot::CreateDots();
-	Ghost::CreateGhosts();
+    Dot_UI::CreateDots();
+	Ghost_UI::CreateGhosts();
 	Ghost::AddPacMan(pacman);
+	Ghost::Start();
     map.addPortal({ 0, 17 });
     map.addPortal({ 27, 17 });
+	//---
+	list<Drawing*> sprites;
+	sprites.push_back(&pacman);
+	for (Ghost_UI* g : Ghost_UI::GhostList()) {
+		sprites.push_back(g);
+	}
+	for (Dot_UI* d : Dot_UI::DotList()) {
+		sprites.push_front(d);
+	}
     //---
     map.drawMap();
+	for (Drawing* d : sprites) {
+		if (d == nullptr) {
+			sprites.remove(d);
+		}
+		else {
+			d->Draw(d->Start());
+		}
+		
+	}
+	refresh();
     //---
     std::thread inputThread(processInput);
     std::thread ghostStart(&Ghost::Start);
@@ -71,11 +96,15 @@ int main() {
     //---
 	bool r = false;
 	//---
-    while ((pacman.getLives()>0)&&(Dot::DotReamining()>0)) {
-        //pacman.Move();
-		/*Ghost::MoveGhosts(pacman);*/
-		pacman.Draw();
-        //map.drawMap();
+    while ((pacman.getLives()>0)&&(Dot::DotReamining()>0)&&(!ending)) {
+		for (Drawing* d : sprites) {
+			if (d == nullptr) {
+				sprites.remove(d);
+			}
+			else {
+				d->Update();
+			}
+		}
 		if (r != DynamicEntity::Rage()) {
 			map.drawMap();
 			r = DynamicEntity::Rage();
@@ -86,7 +115,6 @@ int main() {
     //---
     clear();
 	if (pacman.getLives() <= 0) {
-		//mvprintw(0,0,"You Lose!\n");
 		mvprintw(0, 0, "                                                   .##################################+.\n");
 		mvprintw(1, 0, "                                                 .####------------------------------+###+.\n");
 		mvprintw(2, 0, "                                               .##+#-.                               .+###-\n");
@@ -129,9 +157,8 @@ int main() {
 		mvprintw(39, 0, "                                               .####-.                               .+###-\n");
 		mvprintw(40, 0, "                                                 .####-------------------------------###+.\n");
 		mvprintw(41, 0, "                                                   -##################################+.\n");
-	}
-	else {
-		mvprintw(0,0,"You Win!\n");
+	} else {
+		mvprintw(0, 0, "You win!");
 	}
   refresh();
     //---

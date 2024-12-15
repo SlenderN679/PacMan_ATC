@@ -1,5 +1,6 @@
 #pragma once
 #include "_Size_TXY.h"
+#include "Drawing.h"
 #include "chrono"
 #include "thread"
 #include <cstdlib>
@@ -22,6 +23,7 @@ using namespace std;
 
 class DynamicEntity {
 	Size_TXY coords;
+	Size_TXY start;
 	const EntTypes type;
 	static list<DynamicEntity*> entities;
 protected:
@@ -32,6 +34,7 @@ public:
 	DynamicEntity(Size_TXY coords, EntTypes type);
 	Size_TXY Move(IntXY dis);
 	Size_TXY Position() const;
+	Size_TXY Start() const;
 	EntTypes Type() const;
 	static bool Rage();
 	static void Calm();
@@ -39,6 +42,5 @@ public:
 	EntTypes CheckPos(Size_TXY coords);
 	void rage_timer(int seconds);
 	void StartRage();
-	/*bool ECollision(Size_TXY coords);
-	bool OCollision(Size_TXY coords);*/
+	static list<DynamicEntity*> EntityList();
 };

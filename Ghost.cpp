@@ -17,7 +17,6 @@ Ghost::Ghost(Size_TXY coords, GstNames name) : DynamicEntity(coords, GHOST_E), n
 	attack = false;
 	inHome = true;
 	//ghosts.push_back(this);
-	Map::addGhost(coords);
 	switch (name){
 	case BLINKY:
 		scatter = { 25, 0 };
@@ -371,14 +370,6 @@ void Ghost::Roam() {
 			Map::addGhost(pos);
 		}
 	default:
-		//wallCount = 0;
-		////unsigned char a = SPACE;
-		//Map::clearCell(pos);
-		//Map::add(pos, prevSpot);
-		//prevSpot = SPACE;
-		//pos = DynamicEntity::Move(dir);
-		//Map::clearCell(pos);
-		//Map::addGhost(pos);
 		break;
 	}
 	if (wallCount >= 3) {
@@ -430,22 +421,6 @@ void Ghost::Home() {
 		break;
 	}
 }
-void Ghost::CreateGhosts() {
-	ghosts.push_back(new Ghost({ 13, 14 }, BLINKY));
-	ghosts.push_back(new Ghost({ 13, 17 }, PINKY));
-	ghosts.push_back(new Ghost({ 11, 17 }, INKY));
-	ghosts.push_back(new Ghost({ 15, 17 }, CLYDE));
-
-	/*Ghost blinky({ 13, 14 }, BLINKY);
-	Ghost pinky({ 13, 17 }, PINKY);
-	Ghost inky({ 11, 17 }, INKY);
-	Ghost clyde({ 15, 17 }, CLYDE);*/
-}
-//void Ghost::MoveGhosts() {
-//	for (Ghost* g : ghosts) {
-//		g->Move(p);
-//	}
-//}
 void Ghost::scatter_timer(int seconds) {
 	while (true) {
 		if (!attack) {

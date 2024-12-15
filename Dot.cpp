@@ -29,7 +29,9 @@ bool Dot::CreateDots() {
 bool Dot::destroy(Size_TXY pos) {
 	for (auto it = dots.begin(); it != dots.end(); it++) {
 		if ((*it)->Position() == pos) {
+			(*it)->removeFromDerivedList();
 			dots.erase(it);
+			//delete* it;
 			return true;
 		}
 	}
@@ -43,4 +45,21 @@ void Dot::CreateByte(Size_TXY pos) {
 }
 int Dot::DotReamining() {
 	return dots.size();
+}
+void Dot::removeFromDerivedList() {
+	for (auto it = dots.begin(); it != dots.end(); it++) {
+		if (*it == this) {
+			dots.erase(it);
+			//delete* it;
+			break;
+		}
+	}
+}
+bool Dot::CheckDot(Size_TXY pos) {
+	for (Dot* d : dots) {
+		if (d->Position() == pos) {
+			return true;
+		}
+	}
+	return false;
 }

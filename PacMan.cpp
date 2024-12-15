@@ -1,6 +1,6 @@
 #include "PacMan.h"
-Size_TXY pacmanStart = { 14 , 26 };
-PacMan::PacMan() : DynamicEntity(pacmanStart, PACMAN_E) {
+Size_TXY reset = { 14 , 26 };
+PacMan::PacMan() : DynamicEntity(reset, PACMAN_E) {
 	direction = RIGHT;
 	nextDirection = RIGHT;
 	lives = 3;
@@ -36,7 +36,7 @@ Size_TXY PacMan::Move() {
 	} 
 	switch (Map::getCell({ pos.x + dir.x, pos.y + dir.y })) {
 	case PORTAL:
-		pos = DynamicEntity::Move({ 25 * (-dir.x), 0 });
+		pos = DynamicEntity::Move({ 26 * (-dir.x), 0 });
 		break;
 	case WALL:
 		direction = nextDirection;

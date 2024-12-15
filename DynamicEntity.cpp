@@ -9,7 +9,7 @@ Size_TXY DynamicEntity::GStart() {
 void DynamicEntity::PStart(Size_TXY c) {
 	coords = c;
 }
-DynamicEntity::DynamicEntity(Size_TXY coords, EntTypes type) : coords(coords), type(type) {
+DynamicEntity::DynamicEntity(Size_TXY coords, EntTypes type) : coords(coords), type(type), start(coords) {
 	entities.push_back(this);
 }
 Size_TXY DynamicEntity::Move(IntXY dis) {
@@ -18,6 +18,9 @@ Size_TXY DynamicEntity::Move(IntXY dis) {
 }
 Size_TXY DynamicEntity::Position() const {
 	return coords;
+}
+Size_TXY DynamicEntity::Start() const {
+	return start;
 }
 EntTypes DynamicEntity::Type() const {
 	return type;
@@ -42,4 +45,7 @@ void DynamicEntity::rage_timer(int seconds) {
 void DynamicEntity::StartRage() {
 	std::thread rageThread(&DynamicEntity::rage_timer, this, 15);
 	rageThread.detach();
+}
+list<DynamicEntity*> DynamicEntity::EntityList() {
+	return entities;
 }

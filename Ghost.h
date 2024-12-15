@@ -27,8 +27,6 @@ public:
 	static GstNames getNames(Size_TXY pos);
 	void Home();
 	void Roam();
-	static void CreateGhosts();
-	/*static void MoveGhosts();*/
 	void scatter_timer(int seconds);
 	void start_timer(int seconds);
 	static void Start();

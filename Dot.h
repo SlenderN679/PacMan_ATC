@@ -12,4 +12,7 @@ public:
 	static void CreateBit(Size_TXY pos);
 	static void CreateByte(Size_TXY pos);
 	static int DotReamining();
+	virtual ~Dot() = default;
+	virtual void removeFromDerivedList();
+	static bool CheckDot(Size_TXY pos);
 };

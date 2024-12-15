@@ -15,6 +15,7 @@ class PacMan : public DynamicEntity {
 	int lives;
 	int score;
 public:
+	Size_TXY pacmanStart;
 	PacMan();
 	Size_TXY Move();
 	void Turn(Directions direction);

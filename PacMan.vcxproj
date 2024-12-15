@@ -133,6 +133,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Dot.cpp" />
+    <ClCompile Include="Dot_UI.cpp" />
     <ClCompile Include="DynamicEntity.cpp" />
     <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="Ghost_UI.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Dot_UI.h" />
     <ClInclude Include="Drawing.h" />
     <ClInclude Include="Ghost_UI.h" />
     <ClInclude Include="Intersection.h" />

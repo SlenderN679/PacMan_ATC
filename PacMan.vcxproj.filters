@@ -54,6 +54,9 @@
     <ClCompile Include="Ghost_UI.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="Dot_UI.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicEntity.h">
@@ -99,6 +102,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Ghost_UI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dot_UI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
