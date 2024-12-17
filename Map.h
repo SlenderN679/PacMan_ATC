@@ -28,14 +28,6 @@ public:
 	static bool add(Size_TXY pos, unsigned char type);
 	static bool addWall(Size_TXY pos);
 	static bool addPortal(Size_TXY pos);
-	//static bool addInter(Size_TXY pos);
 	static bool clearCell(Size_TXY pos);
 	static unsigned char getCell(Size_TXY pos);
 };
-/*
-#define PACMAN 67
-#define GHOST 71
-#define WALL 178
-#define BYTE 48
-#define BIT 111
-*/

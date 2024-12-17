@@ -10,8 +10,22 @@ void Ghost_UI::Update() {
 	int startY = (maxY - ROWS) / 2;  // Center the map vertically
 	int startX = (maxX - COLS) / 2;  // Center the map horizontally
 	Size_TXY coords = Ghost::Position();
-	if (prevSpot == SPACE) {
+	switch (prevSpot) {
+	case BIT:
+		attron(COLOR_PAIR(BRANCO));
+		mvaddch(startY + coords.y, startX + coords.x, (chtype)250);
+		attroff(COLOR_PAIR(BRANCO));
+		break;
+	case BYTE:
+		attron(COLOR_PAIR(AMARELO));
+		mvaddch(startY + coords.y, startX + coords.x, ACS_DIAMOND);
+		attroff(COLOR_PAIR(AMARELO));
+		break;
+	case SPACE:
 		mvaddch(startY + coords.y, startX + coords.x, SPACE);
+		break;
+	default:
+		break;
 	}
 	Ghost::Move();
 	coords = Ghost::Position();
@@ -70,4 +84,7 @@ Size_TXY Ghost_UI::Start() {
 }
 list<Ghost_UI*> Ghost_UI::GhostList() {
 	return ghosts;
+}
+EntTypes Ghost_UI::Type() {
+	return GHOST_E;
 }

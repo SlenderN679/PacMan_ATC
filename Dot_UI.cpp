@@ -74,3 +74,6 @@ void Dot_UI::removeFromDerivedList()  {
 	// Ensure removal from the derived list
 	dots.erase(std::remove(dots.begin(), dots.end(), this), dots.end());
 }
+EntTypes Dot_UI::Type() {
+	return Dot::Type();
+}

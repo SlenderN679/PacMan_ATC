@@ -11,5 +11,6 @@ public:
 	static void CreateGhosts();
 	Size_TXY Start();
 	static list<Ghost_UI*> GhostList();
+	EntTypes Type() override;
 };
 	

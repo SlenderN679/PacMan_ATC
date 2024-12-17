@@ -1,6 +1,6 @@
 #pragma once
 #include "_Size_TXY.h"
-#include "Drawing.h"
+//#include "Drawing.h"
 #include "chrono"
 #include "thread"
 #include <cstdlib>

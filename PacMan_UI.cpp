@@ -41,3 +41,6 @@ void PacMan_UI::Draw(Size_TXY coords) {
 Size_TXY PacMan_UI::Start() {
 	return PacMan::Start();
 }
+EntTypes PacMan_UI::Type() {
+	return PACMAN_E;
+}

@@ -12,4 +12,5 @@ public:
 	Size_TXY Start();
 	static list<Dot_UI*> DotList();
 	void removeFromDerivedList() override;
+	EntTypes Type();
 };

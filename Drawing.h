@@ -14,4 +14,5 @@ public:
 	virtual void Draw(Size_TXY coords) = 0;
 	virtual void Update() = 0;
 	virtual Size_TXY Start() = 0;
+	virtual EntTypes Type() = 0;
 };

@@ -31,7 +31,7 @@ Size_TXY PacMan::Move() {
 	}
 	if (CheckPos({ pos.x + dir.x, pos.y + dir.y }) == GHOST_E) {
 		Hit();
-		return pos;
+		//return pos;
 	} else if ((CheckPos({ pos.x + dir.x, pos.y + dir.y }) == BIT_E) || (CheckPos({ pos.x + dir.x, pos.y + dir.y }) == BYTE_E)) {
 		Dot::destroy(pos);
 	}
