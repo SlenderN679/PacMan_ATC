@@ -6,8 +6,8 @@ Dot_UI::Dot_UI(Size_TXY pos, EntTypes type) : Dot(pos, type) {
 void Dot_UI::Draw(Size_TXY coords) {
 	int maxY, maxX;
 	getmaxyx(stdscr, maxY, maxX);  // Get the current window size
-	int startY = (maxY - 36) / 2;  // Center the map vertically
-	int startX = (maxX - 28) / 2;  // Center the map horizontally
+	int startY = (maxY - ROWS) / 2;  // Center the map vertically
+	int startX = (maxX - COLS) / 2;  // Center the map horizontally
 	init_pair(AMARELO, COLOR_YELLOW, COLOR_BLACK);  // Byte,PacMan,Clyde
 	init_pair(CIANO, COLOR_CYAN, COLOR_BLACK);  // Inky
 	init_pair(VERMELHO, COLOR_RED, COLOR_BLACK);  // Blinky
@@ -29,14 +29,15 @@ void Dot_UI::Draw(Size_TXY coords) {
 		}
 	}
 	attron(COLOR_PAIR(MAGENTA));
+	mvprintw(startY + 2, startX, "Dots:     ");
 	mvprintw(startY + 2, startX, "Dots: %d", Dot::DotReamining());
 	attroff(COLOR_PAIR(MAGENTA));
 }
 void Dot_UI::Update() {
 	int maxY, maxX;
 	getmaxyx(stdscr, maxY, maxX);  // Get the current window size
-	int startY = (maxY - 36) / 2;  // Center the map vertically
-	int startX = (maxX - 28) / 2;  // Center the map horizontally
+	int startY = (maxY - ROWS) / 2;  // Center the map vertically
+	int startX = (maxX - COLS) / 2;  // Center the map horizontally
 	Size_TXY coords = Dot::Position();
 	if ((CheckPos(coords) != PACMAN_E) && (CheckPos(coords) != GHOST_E)) {
 		Draw(coords);

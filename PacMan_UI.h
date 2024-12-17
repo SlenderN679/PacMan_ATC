@@ -7,5 +7,4 @@ public:
 	void Draw(Size_TXY coords);
 	void Update();
 	Size_TXY Start();
-	/*static list<Drawing*> SpriteList();*/
 };

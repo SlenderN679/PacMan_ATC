@@ -9,8 +9,6 @@ public:
 	Dot(Size_TXY pos, EntTypes type);
 	static bool CreateDots();
 	static bool destroy(Size_TXY pos);
-	static void CreateBit(Size_TXY pos);
-	static void CreateByte(Size_TXY pos);
 	static int DotReamining();
 	virtual ~Dot() = default;
 	virtual void removeFromDerivedList();

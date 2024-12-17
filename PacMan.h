@@ -23,5 +23,4 @@ public:
 	Directions getDirection() const;
 	int getLives() const;
 	int getScore() const;
-	void UpdateStats();
 };

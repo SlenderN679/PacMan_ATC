@@ -4,6 +4,8 @@
 #include "list"
 using namespace std;
 class Wall : public StaticObject{
+	size_t width;
+	size_t height;
 	static list<Wall*> walls;
 public:
 	Wall(size_t width, size_t height, Size_TXY coords);

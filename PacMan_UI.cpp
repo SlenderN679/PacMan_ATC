@@ -7,8 +7,8 @@ void PacMan_UI::Update() {
 	int maxY, maxX;
 	getmaxyx(stdscr, maxY, maxX);  // Get the current window size
 
-	int startY = (maxY - 36) / 2;  // Center the map vertically
-	int startX = (maxX - 28) / 2;  // Center the map horizontally
+	int startY = (maxY - ROWS) / 2;  // Center the map vertically
+	int startX = (maxX - COLS) / 2;  // Center the map horizontally
 
 	Size_TXY coords = PacMan::Position();
 
@@ -22,8 +22,8 @@ void PacMan_UI::Draw(Size_TXY coords) {
 	int maxY, maxX;
 	getmaxyx(stdscr, maxY, maxX);  // Get the current window size
 
-	int startY = (maxY - 36) / 2;  // Center the map vertically
-	int startX = (maxX - 28) / 2;  // Center the map horizontally
+	int startY = (maxY - ROWS) / 2;  // Center the map vertically
+	int startX = (maxX - COLS) / 2;  // Center the map horizontally
 	init_pair(AMARELO, COLOR_YELLOW, COLOR_BLACK);  // Byte,PacMan,Clyde
 
 	attron(COLOR_PAIR(AMARELO));

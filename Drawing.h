@@ -10,10 +10,7 @@
 #define CIANO 6
 using namespace std;
 class Drawing{
-//protected:
-//	static list<Drawing*> sprites;
 public:
-	//Drawing()=default;
 	virtual void Draw(Size_TXY coords) = 0;
 	virtual void Update() = 0;
 	virtual Size_TXY Start() = 0;

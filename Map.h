@@ -16,25 +16,21 @@
 #define BIT 155
 #define PORTAL 245
 #define INTER 206
+
+#define COLS 28
+#define ROWS 36
 class PacMan;
 class Map {
-	static unsigned char maze[36][28];
+	static unsigned char maze[ROWS][COLS];
 public:
 	Map();
 	void drawMap();
 	static bool add(Size_TXY pos, unsigned char type);
-	static bool addPacman(Size_TXY pos);
-	static bool addGhost(Size_TXY pos);
 	static bool addWall(Size_TXY pos);
-	static bool addByte(Size_TXY pos);
-	static bool addBit(Size_TXY pos);
 	static bool addPortal(Size_TXY pos);
-	static bool addInter(Size_TXY pos);
+	//static bool addInter(Size_TXY pos);
 	static bool clearCell(Size_TXY pos);
 	static unsigned char getCell(Size_TXY pos);
-	static void readMap();
-	static void moveEntity(Size_TXY pos, Size_TXY prev, unsigned char c, unsigned char p);
-	static void addNumber(int number, int startY, int startX);
 };
 /*
 #define PACMAN 67

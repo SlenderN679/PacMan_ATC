@@ -117,7 +117,7 @@ void Ghost::Roam() {
 	if (rage) {
 		target = scatter;
 	}
-	for (Directions i : Intersection::isIntersection(pos)) {
+	/*for (Directions i : Intersection::isIntersection(pos)) {
 		bool choice = false;
 		while (!choice) {
 			if (pos == target) {
@@ -185,7 +185,52 @@ void Ghost::Roam() {
 		if (i == nextDir) {
 			direction = nextDir;
 		}
-	};
+	};*/
+	for (Directions i : Intersection::isIntersection(pos)) {
+		if (pos == target) {
+			return; // Already at the target, no need to change direction
+		}
+
+		switch (direction) {
+		case UP:
+		case DOWN:
+			// Decide horizontal direction (LEFT or RIGHT) based on target x
+			if (pos.x < target.x) {
+				nextDir = RIGHT;
+			}
+			else if (pos.x > target.x) {
+				nextDir = LEFT;
+			}
+			else { // x matches, keep going vertically
+				nextDir = (direction == UP) ? UP : DOWN;
+			}
+			break;
+
+		case LEFT:
+		case RIGHT:
+			// Decide vertical direction (UP or DOWN) based on target y
+			if (pos.y < target.y) {
+				nextDir = DOWN;
+			}
+			else if (pos.y > target.y) {
+				nextDir = UP;
+			}
+			else { // y matches, keep going horizontally
+				nextDir = (direction == LEFT) ? LEFT : RIGHT;
+			}
+			break;
+
+		default:
+			break;
+		}
+
+		// Update direction only if the chosen direction is valid
+		if (i == nextDir) {
+			direction = nextDir;
+			break;
+		}
+	}
+
 	switch (direction) {
 	case UP:
 		dir = { 0 , -1 };

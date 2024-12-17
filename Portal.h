@@ -7,5 +7,5 @@ class Portal : public StaticObject {
 	Sides side;
 	static list<Portal> portals;
 public:
-	Portal(float width, float height, Size_TXY coords, ObjTypes type, Sides side);
+	Portal(Size_TXY coords, ObjTypes type, Sides side);
 };

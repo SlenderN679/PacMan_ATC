@@ -34,7 +34,7 @@ void DynamicEntity::Calm() {
 EntTypes DynamicEntity::CheckPos(Size_TXY coords) {
 	for (DynamicEntity* e : entities) {
 		if (e->Position() == coords) {
-			return e->Type();
+			return e->type;
 		}
 	}
 	return XX;

@@ -8,8 +8,6 @@ PacMan::PacMan() : DynamicEntity(reset, PACMAN_E) {
 	pacmanStart = reset;
 }
 Size_TXY PacMan::Move() {
-	//Map::addNumber(score, 0, 0);
-	//Map::addNumber(lives, 1, 0);
 	Size_TXY pos = Position();
 	IntXY dir = { 0,0 };
 	for (Directions i : Intersection::isIntersection(pos)) {
@@ -78,9 +76,7 @@ Size_TXY PacMan::Hit() {
 		score += 100;
 	} else {
 		lives--;
-		if (lives == 0) {
-			//game over
-		} else {
+		if (lives > 0) {
 			PStart(pacmanStart);
 		}
 	}
@@ -94,9 +90,6 @@ int PacMan::getLives() const{
 }
 int PacMan::getScore() const{
 	return score;
-}
-void PacMan::UpdateStats() {
-	//update stats
 }
 
 

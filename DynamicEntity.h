@@ -38,7 +38,6 @@ public:
 	EntTypes Type() const;
 	static bool Rage();
 	static void Calm();
-	static void timer(int seconds);
 	static EntTypes CheckPos(Size_TXY coords);
 	void rage_timer(int seconds);
 	void StartRage();

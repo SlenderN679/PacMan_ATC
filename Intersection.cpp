@@ -1,6 +1,6 @@
 #include "Intersection.h"
 list<Intersection> Intersection::intersections;
-Intersection::Intersection(Size_TXY coords, list<Directions> ways) : StaticObject(1,1,coords,INTER_O) {
+Intersection::Intersection(Size_TXY coords, list<Directions> ways) : StaticObject(coords,INTER_O) {
 	outs = ways;
 	intersections.push_back(*this);
 	//Map::addInter(coords);

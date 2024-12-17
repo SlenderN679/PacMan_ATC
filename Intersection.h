@@ -7,7 +7,6 @@ class Intersection : public StaticObject {
 	list<Directions> outs;
 public:
 	Intersection(Size_TXY coords,list<Directions> ways);
-	//static list<Intersection> GetIntersections();
 	static void CreateIntersections();
 	list<Directions> Outs();
 	Size_TXY Coords();

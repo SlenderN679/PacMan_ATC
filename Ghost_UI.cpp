@@ -2,13 +2,13 @@
 
 list<Ghost_UI*> Ghost_UI::ghosts;
 Ghost_UI::Ghost_UI(Size_TXY coords, GstNames name) : Ghost(coords, name) {
-	/*sprites.push_back(this);*/
+	
 }
 void Ghost_UI::Update() {
 	int maxY, maxX;
 	getmaxyx(stdscr, maxY, maxX);  // Get the current window size
-	int startY = (maxY - 36) / 2;  // Center the map vertically
-	int startX = (maxX - 28) / 2;  // Center the map horizontally
+	int startY = (maxY - ROWS) / 2;  // Center the map vertically
+	int startX = (maxX - COLS) / 2;  // Center the map horizontally
 	Size_TXY coords = Ghost::Position();
 	if (prevSpot == SPACE) {
 		mvaddch(startY + coords.y, startX + coords.x, SPACE);
@@ -21,8 +21,8 @@ void Ghost_UI::Draw(Size_TXY coords) {
 	int maxY, maxX;
 	getmaxyx(stdscr, maxY, maxX);  // Get the current window size
 
-	int startY = (maxY - 36) / 2;  // Center the map vertically
-	int startX = (maxX - 28) / 2;  // Center the map horizontally
+	int startY = (maxY - ROWS) / 2;  // Center the map vertically
+	int startX = (maxX - COLS) / 2;  // Center the map horizontally
 	init_pair(AMARELO, COLOR_YELLOW, COLOR_BLACK);  // Byte,PacMan,Clyde
 	init_pair(VERMELHO, COLOR_RED, COLOR_BLACK);  // Blinky
 	init_pair(MAGENTA, COLOR_MAGENTA, COLOR_BLACK);  // Pinky
