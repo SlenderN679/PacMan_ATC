@@ -1,8 +1,8 @@
 #include "Game.h"
 
-Game::Game() : difficulty(1), levels_completed(0), score(0) {}
+Game::Game() : difficulty(1), levels_completed(0), score(0), gameRunning(false), cheat(false){}
 
-void Game::draw_menu(const char* title, const char* option[], int num_options, int highlight) {
+void Game::DrawMenu(const char* title, const char* option[], int num_options, int highlight) {
     int maxY, maxX;
     getmaxyx(stdscr, maxY, maxX);  // Get the current window size
     int startY = (maxY) / 2;  // Center the map vertically
@@ -21,14 +21,14 @@ void Game::draw_menu(const char* title, const char* option[], int num_options, i
     }
     refresh();
 }
-void Game::menu() {
+void Game::MainMenu() {
     int highlight = 0;
     int choice;
     const char* options[] = { "Play", "Settings", "Exit" };
     const int num_options = 3;
 
     while (true) {
-        draw_menu("PAC-MAN", options, num_options, highlight);
+        DrawMenu("PAC-MAN", options, num_options, highlight);
         choice = getch();
         switch (choice) {
         case KEY_UP:
@@ -39,10 +39,10 @@ void Game::menu() {
             break;
         case '\n':
             if (highlight == 0) {
-                play_game();
+                StartLevel();
             }
             else if (highlight == 1) {
-                settings();
+                SettingsMenu();
             }
             else if (highlight == 2) {
                 endwin();
@@ -55,14 +55,14 @@ void Game::menu() {
     }
 }
 
-void Game::settings() {
+void Game::SettingsMenu() {
     int highlight = 0;
     int choice;
     const char* options[] = { "Controls", "Difficulty", "Back" };
     const int num_options = 3;
 
     while (true) {
-        draw_menu("Settings", options, num_options, highlight);
+        DrawMenu("Settings", options, num_options, highlight);
         choice = getch();
         switch (choice) {
         case KEY_UP:
@@ -73,10 +73,10 @@ void Game::settings() {
             break;
         case '\n':
             if (highlight == 0) {
-                show_controls();
+                SelectControls();
             }
             else if (highlight == 1) {
-                set_difficulty();
+                SelectDifficulty();
             }
             else if (highlight == 2) {
                 return;
@@ -88,7 +88,7 @@ void Game::settings() {
     }
 }
 
-void Game::show_controls() {
+void Game::SelectControls() {
     int maxY, maxX;
     getmaxyx(stdscr, maxY, maxX);  // Get the current window size
     int startY = (maxY) / 2;  // Center the map vertically
@@ -103,46 +103,85 @@ void Game::show_controls() {
     refresh();
     getch();
 }
-
-void Game::set_difficulty() {
+void Game::SelectDifficulty() {
     int maxY, maxX;
     getmaxyx(stdscr, maxY, maxX);  // Get the current window size
-    int startY = (maxY) / 2;  // Center the map vertically
-    int startX = (maxX) / 2;  // Center the map horizontally
-    clear();
-    mvprintw(startY, startX - (20 / 2), "Choose Difficulty:");
-    mvprintw(startY + 2, startX - (20 / 2), "1. Easy");
-    mvprintw(startY + 3, startX - (20 / 2), "2. Medium");
-    mvprintw(startY + 4, startX - (20 / 2), "3. Hard");
-    refresh();
-    int diff = getch() - '0';
-    if (diff >= 1 && diff <= 3) {
-        difficulty = diff;
+    int startY = maxY / 2;         // Center vertically
+    int startX = maxX / 2;         // Center horizontally
+    int currentSelection = 1;      // Start with "Easy" selected
+
+    while (true) {
+        clear();
+        mvprintw(startY, startX - 10, "Choose Difficulty:");
+
+        // Display options with highlighting
+        for (int i = 1; i <= 3; ++i) {
+            if (i == currentSelection) {
+                attron(A_REVERSE);  // Highlight the current selection
+            }
+            mvprintw(startY + 1 + i, startX - 10, "%d. %s", i,
+                (i == 1 ? "Easy" : i == 2 ? "Medium" : "Hard"));
+            if (i == currentSelection) {
+                attroff(A_REVERSE); // Turn off highlighting
+            }
+        }
+
+        refresh();
+        int ch = getch();
+
+        switch (ch) {
+        case KEY_UP:
+            if (currentSelection > 1) {
+                --currentSelection;
+            }
+            break;
+        case KEY_DOWN:
+            if (currentSelection < 3) {
+                ++currentSelection;
+            }
+            break;
+        case '\n': // Enter key
+            difficulty = currentSelection;
+            return;
+        }
     }
 }
-void Game::play_game() {
+
+void Game::StartLevel() {
     int maxY, maxX;
     getmaxyx(stdscr, maxY, maxX);  // Get the current window size
     int startY = (maxY) / 2;  // Center the map vertically
     int startX = (maxX) / 2;  // Center the map horizontally
     clear();
-    mvprintw(startY, startX - (7 / 2), "Playing...");//tentar implementar o jogo//
+    mvprintw(startY , startX - (11 / 2), "Playing...");//tentar implementar o jogo//
     refresh();
     std::this_thread::sleep_for(std::chrono::seconds(2));
     clear();
     levels_completed = 0;
-	game_loop();
+    while (levels_completed != difficulty) {
+        gameRunning = true;
+        clear();
+        mvprintw(startY, startX - (22 / 2), "Starting level %d ...", (levels_completed+1));
+        refresh();
+        std::this_thread::sleep_for(std::chrono::seconds(2));
+        clear();
+        LevelLoop();
+    }
+	Win();
 }
-void Game::game_loop() {
+void Game::LevelLoop() {
+    int maxY, maxX;
+    getmaxyx(stdscr, maxY, maxX);  // Get the current window size
+    int startY = (maxY - ROWS) / 2;  // Center the map vertically
+    int startX = (maxX - COLS) / 2;  // Center the map horizontally
     Map map;
     PacMan_UI pacman;
     Wall::CreateWalls();
+    Portal::CreatePortals();
     Intersection::CreateIntersections();
     Ghost_UI::CreateGhosts();
     Dot_UI::CreateDots();
     Ghost::AddPacMan(pacman);
-    map.addPortal({ 0, 17 });
-    map.addPortal({ 27, 17 });
     //---
     list<Drawing*> sprites;
     sprites.push_back(&pacman);
@@ -162,12 +201,14 @@ void Game::game_loop() {
         else {
             d->Draw(d->Start());
         }
-
     }
+    attron(COLOR_PAIR(AMARELO));
+    mvprintw(startY + 1, startX + 20, "Level: %d", levels_completed + 1);
+    attroff(COLOR_PAIR(AMARELO));
     refresh();
     //---
-    std::thread inputThread(&Game::processInput, this, std::ref(pacman));
-    std::thread ghostStart(&Ghost::StartGhosts);
+    std::thread inputThread(&Game::process_input, this, std::ref(pacman));
+    std::thread ghostStart(&Ghost::start_ghosts, &gameRunning);
     std::thread rageThread(&Game::rage_timer, this, 15);
     this_thread::sleep_for(chrono::milliseconds(1000));
     //---
@@ -178,7 +219,7 @@ void Game::game_loop() {
 	bool tickInky = false;
 	bool tickClyde = false;
     //---
-    while ((pacman.getLives() > 0) && (Dot::DotReamining() > 0)) {
+    while ((pacman.Lives() > 0) && (Dot::DotReamining() > 0) && (!cheat)) {
         for (auto it = sprites.rbegin(); it != sprites.rend(); ++it) {
             Drawing* d = *it;
             if (d == nullptr) {
@@ -257,36 +298,41 @@ void Game::game_loop() {
         this_thread::sleep_for(chrono::milliseconds(250));
         refresh();
     }
+	cheat = false;
     clear();
-	if (pacman.getLives() <= 0) {
-		death();
+	if (pacman.Lives() <= 0) {
+		Death();
 	} else {
         levels_completed++;
-        if (levels_completed == difficulty) {
-			score += pacman.getScore();
-            win();
-        } else {
-			score += pacman.getScore();
-			game_loop();
-        }
+		score += pacman.Score();
 	}
+	Ghost_UI::ClearGhosts();
+	Dot_UI::ClearDots();
+	Wall::ClearWalls();
+	Portal::ClearPortals();
+	Intersection::ClearIntersections();
+    //--
+	DynamicEntity::ClearEntities();
+	StaticObject::ClearObjects();
+    //--
     refresh();
     //---
+	gameRunning = false;
     inputThread.join();
     ghostStart.join();
     rageThread.join();
 }
-void Game::run() {
+void Game::RunGame() {
     initscr();
     cbreak();
     noecho();
     curs_set(0);
     start_color();
     keypad(stdscr, TRUE);
-    menu();
+    MainMenu();
     endwin();
 }
-void Game::death() {
+void Game::Death() {
     clear();
     mvprintw(0, 0, "                                                   .##################################+.\n");
     mvprintw(1, 0, "                                                 .####------------------------------+###+.\n");
@@ -332,23 +378,25 @@ void Game::death() {
 	mvprintw(41, 0, "                                                   -##################################+.\n");
 	refresh();
 	std::this_thread::sleep_for(std::chrono::seconds(2));
+	score = 0;
     while (getch() != '\n');
 }
-void Game::win() {
+void Game::Win() {
     int maxY, maxX;
     getmaxyx(stdscr, maxY, maxX);  // Get the current window size
     int startY = (maxY) / 2;  // Center the map vertically
     int startX = (maxX) / 2;  // Center the map horizontally
 	clear();
-	mvprintw(startY, startX, "You win!");
-	mvprintw(startY + 1, startX, "Final score: %d", score);
-	mvprintw(startY + 2, startX, "Difficulty: %d", difficulty);
+	mvprintw(startY, startX - (9 / 2), "You win!");
+	mvprintw(startY + 1, startX - (16 / 2), "Final score: %d", score);
+	mvprintw(startY + 2, startX - (15 / 2), "Difficulty: %d", difficulty);
 	refresh();
 	std::this_thread::sleep_for(std::chrono::seconds(2));
+	score = 0;
 	while (getch() != '\n');
 }
-void Game::processInput(PacMan& pacman) {
-    while (true) {
+void Game::process_input(PacMan& pacman) {
+    while (gameRunning) {
         if (GetAsyncKeyState(VK_UP) & 0x8000) {
             pacman.Turn(UP);
         }
@@ -361,11 +409,14 @@ void Game::processInput(PacMan& pacman) {
         if (GetAsyncKeyState(VK_RIGHT) & 0x8000) {
             pacman.Turn(RIGHT);
         }
+		if (GetAsyncKeyState(VK_ESCAPE) & 0x8000) {
+            cheat = true;
+		}
         std::this_thread::sleep_for(std::chrono::milliseconds(50));
     }
 }
 void Game::rage_timer(int seconds) {
-    while (true) {
+    while (gameRunning) {
         if (DynamicEntity::Rage()) {
             for (int i = 0; i < seconds; i++) {
                 std::this_thread::sleep_for(std::chrono::seconds(1));

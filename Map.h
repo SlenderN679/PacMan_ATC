@@ -21,13 +21,13 @@
 #define ROWS 36
 class PacMan;
 class Map {
-	static unsigned char maze[ROWS][COLS];
+	static unsigned char maze[ROWS][COLS];				// The map
 public:
-	Map();
-	void drawMap();
-	static bool add(Size_TXY pos, unsigned char type);
-	static bool addWall(Size_TXY pos);
-	static bool addPortal(Size_TXY pos);
-	static bool clearCell(Size_TXY pos);
-	static unsigned char getCell(Size_TXY pos);
+	Map();												// Constructor
+	void drawMap();										// Draw the map
+	static bool add(Size_TXY pos, unsigned char type);	// Add an object to the map
+	static bool addWall(Size_TXY pos);					// Add a wall to the map
+	static bool addPortal(Size_TXY pos);				// Add a portal to the map
+	static bool clearCell(Size_TXY pos);				// Clear a cell
+	static unsigned char getCell(Size_TXY pos);			// Get the object in a cell
 };

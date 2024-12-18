@@ -29,8 +29,8 @@ void Dot_UI::Draw(Size_TXY coords) {
 		}
 	}
 	attron(COLOR_PAIR(MAGENTA));
-	mvprintw(startY + 2, startX, "Dots:     ");
-	mvprintw(startY + 2, startX, "Dots: %d", Dot::DotReamining());
+	mvprintw(startY + 1, startX, "Dots:     ");
+	mvprintw(startY + 1, startX, "Dots: %d", Dot::DotReamining());
 	attroff(COLOR_PAIR(MAGENTA));
 }
 void Dot_UI::Update() {
@@ -70,10 +70,17 @@ bool Dot_UI::CreateDots() {
 list<Dot_UI*> Dot_UI::DotList() {
 	return dots;
 }
-void Dot_UI::removeFromDerivedList()  {
+void Dot_UI::RemoveFromDerivedList()  {
 	// Ensure removal from the derived list
 	dots.erase(std::remove(dots.begin(), dots.end(), this), dots.end());
 }
 EntTypes Dot_UI::Type() {
 	return Dot::Type();
+}
+void Dot_UI::ClearDots() {
+	/*for (Dot_UI* d : dots) {
+		delete d;
+	}*/
+	dots.clear();
+	Dot::ClearDots();
 }

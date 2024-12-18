@@ -24,11 +24,11 @@ bool Dot::CreateDots() {
 	}
 	return true;
 }
-bool Dot::destroy(Size_TXY pos) {
+bool Dot::Destroy(Size_TXY pos) {
 	for (auto it = dots.begin(); it != dots.end(); it++) {
 		if ((*it)->Position() == pos) {
 			DynamicEntity::RemoveEntity(*it);
-			(*it)->removeFromDerivedList();
+			(*it)->RemoveFromDerivedList();
 			dots.erase(it);
 			//delete* it;
 			return true;
@@ -39,7 +39,7 @@ bool Dot::destroy(Size_TXY pos) {
 int Dot::DotReamining() {
 	return dots.size();
 }
-void Dot::removeFromDerivedList() {
+void Dot::RemoveFromDerivedList() {
 	for (auto it = dots.begin(); it != dots.end(); it++) {
 		if (*it == this) {
 			dots.erase(it);
@@ -55,4 +55,10 @@ bool Dot::CheckDot(Size_TXY pos) {
 		}
 	}
 	return false;
+}
+void Dot::ClearDots() {
+	/*for (Dot* d : dots) {
+		delete d;
+	}*/
+	dots.clear();
 }

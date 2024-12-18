@@ -57,7 +57,7 @@ list<Directions> Intersection::Outs() {
 	return outs;
 }
 Size_TXY Intersection::Coords() {
-	return getCoords();
+	return StaticObject::Coords();
 }
 list<Directions> Intersection::isIntersection(Size_TXY coords) {
 	for (auto i : intersections) {
@@ -66,4 +66,10 @@ list<Directions> Intersection::isIntersection(Size_TXY coords) {
 		}
 	}
 	return {};
+}
+void Intersection::ClearIntersections() {
+	/*for (Intersection i : intersections) {
+		delete& i;
+	}*/
+	intersections.clear();
 }

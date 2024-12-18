@@ -57,3 +57,10 @@ void DynamicEntity::RemoveEntity(DynamicEntity* e) {
 		}
 	}
 }
+void DynamicEntity::ClearEntities() {
+	/*for (DynamicEntity* e : entities) {
+		if (e != nullptr)
+		delete e;
+	}*/
+	entities.clear();
+}
