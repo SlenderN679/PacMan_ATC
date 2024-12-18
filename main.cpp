@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-	Game game;
-	game.run();
+	Game game;   // Create a game object
+	game.RunGame();  // Run the game
 	return 0;
 }

@@ -15,24 +15,26 @@
 
 class Game {
 private:
-	int difficulty;
-	int score;
-	int levels_completed;
+	int difficulty;																				// 1 - Easy, 2 - Medium, 3 - Hard
+	int score;																					// Score of the current game
+	int levels_completed;																		// Number of levels completed
+	bool cheat;																					// If the player used a cheat
+	bool gameRunning;																			// If the game is running
 	//---
-	void draw_menu(const char* tittle, const char* options[], int num_options, int highlight);
-	void menu();
-	void settings();
-	void show_controls();
-	void set_difficulty();
-	void play_game();
-	void game_loop();
-	void death();
-	void win();
-	void processInput(PacMan& pacman);
-	void rage_timer(int seconds);
+	void DrawMenu(const char* tittle, const char* options[], int num_options, int highlight);	// Draw the MainMenu
+	void MainMenu();																			// Main Menu
+	void SettingsMenu();																		// Settings Menu
+	void SelectControls();																		// Select the controls
+	void SelectDifficulty();																	// Select the difficulty
+	void StartLevel();																			// Start the level
+	void LevelLoop();																			// Loop of the level
+	void Death();																				// Death screen
+	void Win();																					// Win screen
+	void process_input(PacMan& pacman);															// Process the input *parallel*
+	void rage_timer(int seconds);																// Rage timer *parallel*
 
 public:
-	Game();
-	void run();
+	Game();																						// Constructor
+	void RunGame();																				// Run the game
 
 };

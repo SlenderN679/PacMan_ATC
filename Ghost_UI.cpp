@@ -88,3 +88,10 @@ list<Ghost_UI*> Ghost_UI::GhostList() {
 EntTypes Ghost_UI::Type() {
 	return GHOST_E;
 }
+void Ghost_UI::ClearGhosts() {
+	/*for (Ghost_UI* g : ghosts) {
+		delete g;
+	}*/
+	ghosts.clear();
+	Ghost::ClearGhosts();
+}

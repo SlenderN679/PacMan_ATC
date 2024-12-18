@@ -141,7 +141,6 @@
     <ClCompile Include="Intersection.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
-    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="StaticObject.cpp" />
     <ClCompile Include="PacMan.cpp" />
     <ClCompile Include="PacMan_UI.cpp" />
@@ -154,7 +153,6 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Ghost_UI.h" />
     <ClInclude Include="Intersection.h" />
-    <ClInclude Include="Menu.h" />
     <ClInclude Include="PacMan_UI.h" />
     <ClInclude Include="_Directions.h" />
     <ClInclude Include="Dot.h" />

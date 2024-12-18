@@ -55,7 +55,7 @@ void Ghost::Move() {
 void Ghost::Roam() {
 	Size_TXY pos = DynamicEntity::Position();
 	Size_TXY pacPos = p->Position();
-	Directions pacDir = p->getDirection();
+	Directions pacDir = p->Direction();
 	IntXY dir = { 0,0 };
 	Directions nextDir = direction;
 	//---
@@ -374,7 +374,7 @@ void Ghost::Roam() {
 		}
 	}
 }
-Directions Ghost::getDirection() const {
+Directions Ghost::Direction() const {
 	return direction;
 }
 GstNames Ghost::getNames() {
@@ -413,19 +413,14 @@ void Ghost::scatter_timer(int seconds) {
 		}
 	}
 }
-void Ghost::start_timer(int seconds) {
-	for (int i = 0; i < seconds; i++) {
-		std::this_thread::sleep_for(std::chrono::seconds(1));
-	}
-	attack = true;
-	inHome = false;
-	GStart();
-}
-void Ghost::StartGhosts() {
+void Ghost::start_ghosts(bool* gameRunning) {
 	int x = 0;
 	for (Ghost* g : ghosts) {
 		for (int i = 0; i < x; i++) {
 			std::this_thread::sleep_for(std::chrono::seconds(1));
+			if (!(*gameRunning)) {
+				return;
+			}
 		}
 		g->leave = true;
 		x = 30;
@@ -441,4 +436,10 @@ GstNames Ghost::getNames(Size_TXY pos) {
 }
 void Ghost::AddPacMan(PacMan& p) {
 	Ghost::p = &p;
+}
+void Ghost::ClearGhosts() {
+	/*for (Ghost* g : ghosts) {
+		delete g;
+	}*/
+	ghosts.clear();
 }

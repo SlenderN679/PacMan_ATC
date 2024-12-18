@@ -33,7 +33,7 @@ Size_TXY PacMan::Move() {
 		Hit();
 		//return pos;
 	} else if ((CheckPos({ pos.x + dir.x, pos.y + dir.y }) == BIT_E) || (CheckPos({ pos.x + dir.x, pos.y + dir.y }) == BYTE_E)) {
-		Dot::destroy(pos);
+		Dot::Destroy(pos);
 	}
 	switch (Map::getCell({ pos.x + dir.x, pos.y + dir.y })) {
 	case PORTAL:
@@ -47,12 +47,12 @@ Size_TXY PacMan::Move() {
 		case BYTE_E:
 			rage = true;
 			pos = DynamicEntity::Move(dir);
-			Dot::destroy(pos);
+			Dot::Destroy(pos);
 			break;
 		case BIT_E:
 			score += 1;
 			pos = DynamicEntity::Move(dir);
-			Dot::destroy(pos);
+			Dot::Destroy(pos);
 			break;
 		case GHOST_E:
 			pos = Hit();
@@ -82,13 +82,13 @@ Size_TXY PacMan::Hit() {
 	}
 	return Position();
 }
-Directions PacMan::getDirection() const{
+Directions PacMan::Direction() const{
 	return direction;
 }
-int PacMan::getLives() const{
+int PacMan::Lives() const{
 	return lives;
 }
-int PacMan::getScore() const{
+int PacMan::Score() const{
 	return score;
 }
 

@@ -72,3 +72,9 @@ void Wall::CreateWalls() {
 void Wall::CreateWall(Size_TXY coords) {
 	walls.push_back(new Wall(coords));
 } 
+void Wall::ClearWalls() {
+	/*for (Wall* w : walls) {
+		delete w;
+	}*/
+	walls.clear();
+}

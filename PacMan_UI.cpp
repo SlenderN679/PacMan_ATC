@@ -31,11 +31,11 @@ void PacMan_UI::Draw(Size_TXY coords) {
 	attroff(COLOR_PAIR(AMARELO));
 
 	attron(COLOR_PAIR(CIANO));
-	mvprintw(startY, startX, "Score: %d", getScore());
+	mvprintw(startY, startX, "Score: %d", Score());
 	attroff(COLOR_PAIR(CIANO));
 
 	attron(COLOR_PAIR(VERMELHO));
-	mvprintw(startY + 1, startX, "Lives: %d", getLives());
+	mvprintw(startY, startX + 20, "Lives: %d", Lives());
 	attroff(COLOR_PAIR(VERMELHO));
 }
 Size_TXY PacMan_UI::Start() {

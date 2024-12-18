@@ -45,9 +45,6 @@
     <ClCompile Include="Intersection.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="Menu.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
     <ClCompile Include="PacMan_UI.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
@@ -93,9 +90,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Intersection.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PacMan_UI.h">

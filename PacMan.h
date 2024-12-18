@@ -10,17 +10,17 @@
 #include "list"
 using namespace std;
 class PacMan : public DynamicEntity {
-	Directions direction;
-	Directions nextDirection;
-	int lives;
-	int score;
+	Directions direction;				// Direction of the pacman
+	Directions nextDirection;			// Next direction of the pacman
+	int lives;							// Number of lives of the pacman
+	int score;							// Score of the pacman
 public:
-	Size_TXY pacmanStart;
-	PacMan();
-	Size_TXY Move();
-	void Turn(Directions direction);
-	Size_TXY Hit();
-	Directions getDirection() const;
-	int getLives() const;
-	int getScore() const;
+	Size_TXY pacmanStart;				// Start position of the pacman
+	PacMan();							// Constructor
+	Size_TXY Move();					// Move the pacman
+	void Turn(Directions direction);	// Turn the pacman
+	Size_TXY Hit();						// Hit the pacman
+	Directions Direction() const;		// Get the direction of the pacman
+	int Lives() const;					// Get the lives of the pacman
+	int Score() const;					// Get the score of the pacman
 };

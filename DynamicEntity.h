@@ -22,25 +22,26 @@ enum EntTypes {BIT_E, BYTE_E, CHERRY_E, GHOST_E, PACMAN_E, XX};
 using namespace std;
 
 class DynamicEntity {
-	Size_TXY coords;
-	Size_TXY start;
-	const EntTypes type;
-	static list<DynamicEntity*> entities;
+	Size_TXY coords;								// Coordinates of the object
+	Size_TXY start;									// Start position of the object
+	const EntTypes type;							// Type of the object
+	static list<DynamicEntity*> entities;			// List of objects
 protected:
-	static bool rage;
-	Size_TXY GStart();
-	void PStart(Size_TXY c);
+	static bool rage;								// If the objects are in rage mode
+	Size_TXY GStart();								// Start position of the ghost
+	void PStart(Size_TXY c);						// Start position of the pacman
 public:
-	DynamicEntity(Size_TXY coords, EntTypes type);
-	Size_TXY Move(IntXY dis);
-	Size_TXY Position() const;
-	Size_TXY Start() const;
-	EntTypes Type() const;
-	static bool Rage();
-	static void Calm();
-	static EntTypes CheckPos(Size_TXY coords);
-	void rage_timer(int seconds);
-	void StartRage();
-	static list<DynamicEntity*> EntityList();
-	static void RemoveEntity(DynamicEntity* e);
+	DynamicEntity(Size_TXY coords, EntTypes type);	// Constructor
+	Size_TXY Move(IntXY dis);						// Move the object
+	Size_TXY Position() const;						// Get the position of the object
+	Size_TXY Start() const;							// Get the start position of the object
+	EntTypes Type() const;							// Get the type of the object
+	static bool Rage();								// Get the rage mode
+	static void Calm();								// Calm the objects
+	static EntTypes CheckPos(Size_TXY coords);		// Check the position of the object
+	void rage_timer(int seconds);					// Rage timer *parallel*
+	void StartRage();								// Start the rage mode
+	static list<DynamicEntity*> EntityList();		// Get the list of objects
+	static void RemoveEntity(DynamicEntity* e);		// Remove the object from the list
+	static void ClearEntities();					// Clear the list of objects
 };
