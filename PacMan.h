@@ -14,6 +14,7 @@ class PacMan : public DynamicEntity {
 	Directions nextDirection;			// Next direction of the pacman
 	int lives;							// Number of lives of the pacman
 	int score;							// Score of the pacman
+	bool hit;							// If the pacman is hit
 public:
 	Size_TXY pacmanStart;				// Start position of the pacman
 	PacMan();							// Constructor

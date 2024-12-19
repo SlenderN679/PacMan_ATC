@@ -79,6 +79,7 @@ void Game::SettingsMenu() {
                 SelectDifficulty();
             }
             else if (highlight == 2) {
+				endwin();
                 return;
             }
             break;
@@ -329,6 +330,7 @@ void Game::RunGame() {
     curs_set(0);
     start_color();
     keypad(stdscr, TRUE);
+	while (true)
     MainMenu();
     endwin();
 }
@@ -379,6 +381,7 @@ void Game::Death() {
 	refresh();
 	std::this_thread::sleep_for(std::chrono::seconds(2));
 	score = 0;
+	levels_completed = 0;
     while (getch() != '\n');
 }
 void Game::Win() {
@@ -393,6 +396,7 @@ void Game::Win() {
 	refresh();
 	std::this_thread::sleep_for(std::chrono::seconds(2));
 	score = 0;
+	levels_completed = 0;
 	while (getch() != '\n');
 }
 void Game::process_input(PacMan& pacman) {

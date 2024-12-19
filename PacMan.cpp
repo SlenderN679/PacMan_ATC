@@ -6,10 +6,23 @@ PacMan::PacMan() : DynamicEntity(reset, PACMAN_E) {
 	lives = 3;
 	score = 0;
 	pacmanStart = reset;
+	hit = false;
 }
 Size_TXY PacMan::Move() {
 	Size_TXY pos = Position();
 	IntXY dir = { 0,0 };
+	if (hit) {
+		hit = false;
+		if (rage) {
+			score += 100;
+		} else {
+			lives--;
+			if (lives > 0) {
+				PStart(pacmanStart);
+			}
+			return pacmanStart;
+		}
+	}
 	for (Directions i : Intersection::isIntersection(pos)) {
 		if (i == nextDirection) {
 			direction = nextDirection;
@@ -72,14 +85,7 @@ void PacMan::Turn(Directions direction) {
 	nextDirection = direction;
 }
 Size_TXY PacMan::Hit() {
-	if (rage) {
-		score += 100;
-	} else {
-		lives--;
-		if (lives > 0) {
-			PStart(pacmanStart);
-		}
-	}
+	hit = true;
 	return Position();
 }
 Directions PacMan::Direction() const{
