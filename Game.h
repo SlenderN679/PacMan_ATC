@@ -19,7 +19,7 @@ private:
 	int score;																					// Score of the current game
 	int levels_completed;																		// Number of levels completed
 	bool cheat;																					// If the player used a cheat
-	bool gameRunning;																			// If the game is running
+	bool game_running;																			// If the game is running
 	//---
 	void DrawMenu(const char* tittle, const char* options[], int num_options, int highlight);	// Draw the MainMenu
 	void MainMenu();																			// Main Menu

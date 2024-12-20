@@ -1,6 +1,6 @@
 #include "Game.h"
 
-Game::Game() : difficulty(1), levels_completed(0), score(0), gameRunning(false), cheat(false){}
+Game::Game() : difficulty(1), levels_completed(0), score(0), game_running(false), cheat(false){}
 
 void Game::DrawMenu(const char* title, const char* option[], int num_options, int highlight) {
     int maxY, maxX;
@@ -160,7 +160,7 @@ void Game::StartLevel() {
     clear();
     levels_completed = 0;
     while (levels_completed != difficulty) {
-        gameRunning = true;
+        game_running = true;
         clear();
         mvprintw(startY, startX - (22 / 2), "Starting level %d ...", (levels_completed+1));
         refresh();
@@ -209,7 +209,7 @@ void Game::LevelLoop() {
     refresh();
     //---
     std::thread inputThread(&Game::process_input, this, std::ref(pacman));
-    std::thread ghostStart(&Ghost::start_ghosts, &gameRunning);
+    std::thread ghostStart(&Ghost::start_ghosts, &game_running);
     std::thread rageThread(&Game::rage_timer, this, 15);
     this_thread::sleep_for(chrono::milliseconds(1000));
     //---
@@ -318,7 +318,7 @@ void Game::LevelLoop() {
     //--
     refresh();
     //---
-	gameRunning = false;
+	game_running = false;
     inputThread.join();
     ghostStart.join();
     rageThread.join();
@@ -400,7 +400,7 @@ void Game::Win() {
 	while (getch() != '\n');
 }
 void Game::process_input(PacMan& pacman) {
-    while (gameRunning) {
+    while (game_running) {
         if (GetAsyncKeyState(VK_UP) & 0x8000) {
             pacman.Turn(UP);
         }
@@ -420,7 +420,7 @@ void Game::process_input(PacMan& pacman) {
     }
 }
 void Game::rage_timer(int seconds) {
-    while (gameRunning) {
+    while (game_running) {
         if (DynamicEntity::Rage()) {
             for (int i = 0; i < seconds; i++) {
                 std::this_thread::sleep_for(std::chrono::seconds(1));

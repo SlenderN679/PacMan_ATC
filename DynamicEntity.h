@@ -9,7 +9,7 @@
 #include <curses.h>
 #include <stdio.h>
 #include <list>
-enum EntTypes {BIT_E, BYTE_E, CHERRY_E, GHOST_E, PACMAN_E, XX};
+enum EntTypes {BIT_E, BYTE_E, GHOST_E, PACMAN_E, XX};
 
 #define BRANCO 0
 #define AZUL 1

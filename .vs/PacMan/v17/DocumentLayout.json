@@ -3,84 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\PacMan.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:PacMan.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\PacMan.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:PacMan.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\_Size_TXY.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:_Size_TXY.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\_Directions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:_Directions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\_Size_TXY.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:_Size_TXY.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Dot.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Dot.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\DynamicEntity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:DynamicEntity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Ghost.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Ghost.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Ghost.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Ghost.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Intersection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Intersection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\StaticObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:StaticObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Portal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Portal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Intersection.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Intersection.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\StaticObject.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:StaticObject.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\PacMan_UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:PacMan_UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Ghost_UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Ghost_UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\PacMan_UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:PacMan_UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Intersection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Intersection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Ghost.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Ghost.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Ghost.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Ghost.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Portal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Portal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Ghost_UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Ghost_UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Dot_UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -95,24 +59,64 @@
       "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\PacMan_UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:PacMan_UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Dot_UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Dot_UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\DynamicEntity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:DynamicEntity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\DynamicEntity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:DynamicEntity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Dot.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Dot.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Ghost_UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Ghost_UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Dot.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Dot.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\DynamicEntity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:DynamicEntity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Mapa.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Mapa.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\StaticObject.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:StaticObject.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\StaticObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:StaticObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Intersection.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Intersection.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\PacMan.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:PacMan.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\PacMan.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:PacMan.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Ghost_UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Ghost_UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Dot_UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Dot_UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Wall.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -121,10 +125,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Portal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Portal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Mapa.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{EFD903AE-DEAC-42DC-991C-9D0FC35307F2}|PacMan.vcxproj|solutionrelative:Mapa.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -134,7 +134,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -147,7 +147,8 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-13T15:59:14.763Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -155,19 +156,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "_Size_TXY.h",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\_Size_TXY.h",
               "RelativeDocumentMoniker": "_Size_TXY.h",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\_Size_TXY.h",
               "RelativeToolTip": "_Size_TXY.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-18T23:19:54.514Z"
+              "WhenOpened": "2024-12-18T23:19:54.514Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "_Directions.h",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\_Directions.h",
               "RelativeDocumentMoniker": "_Directions.h",
@@ -175,36 +177,38 @@
               "RelativeToolTip": "_Directions.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-18T23:19:41.623Z"
+              "WhenOpened": "2024-12-18T23:19:41.623Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Game.cpp",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Game.cpp",
               "RelativeDocumentMoniker": "Game.cpp",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Game.cpp",
               "RelativeToolTip": "Game.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAIwFEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-17T21:10:31.116Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 13,
               "Title": "Game.h",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Game.h",
               "RelativeDocumentMoniker": "Game.h",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Game.h",
               "RelativeToolTip": "Game.h",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACUAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-17T21:10:23.396Z"
+              "WhenOpened": "2024-12-17T21:10:23.396Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 12,
               "Title": "Drawing.h",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Drawing.h",
               "RelativeDocumentMoniker": "Drawing.h",
@@ -212,35 +216,25 @@
               "RelativeToolTip": "Drawing.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-13T21:53:21.703Z"
+              "WhenOpened": "2024-12-13T21:53:21.703Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Dot_UI.cpp",
-              "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Dot_UI.cpp",
-              "RelativeDocumentMoniker": "Dot_UI.cpp",
-              "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Dot_UI.cpp",
-              "RelativeToolTip": "Dot_UI.cpp",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB8AAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-14T22:56:25.075Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 11,
               "Title": "Dot_UI.h",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Dot_UI.h",
               "RelativeDocumentMoniker": "Dot_UI.h",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Dot_UI.h",
               "RelativeToolTip": "Dot_UI.h",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAIwA0AAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-14T22:56:18.225Z"
+              "WhenOpened": "2024-12-14T22:56:18.225Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 10,
               "Title": "Ghost_UI.cpp",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Ghost_UI.cpp",
               "RelativeDocumentMoniker": "Ghost_UI.cpp",
@@ -248,73 +242,103 @@
               "RelativeToolTip": "Ghost_UI.cpp",
               "ViewState": "AgIAAFAAAAAAAAAAAAAAAF8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-13T23:20:06.523Z"
+              "WhenOpened": "2024-12-13T23:20:06.523Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 27,
               "Title": "Ghost_UI.h",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Ghost_UI.h",
               "RelativeDocumentMoniker": "Ghost_UI.h",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Ghost_UI.h",
               "RelativeToolTip": "Ghost_UI.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-13T23:18:08.672Z"
+              "WhenOpened": "2024-12-13T23:18:08.672Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 5,
               "Title": "PacMan_UI.cpp",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\PacMan_UI.cpp",
               "RelativeDocumentMoniker": "PacMan_UI.cpp",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\PacMan_UI.cpp",
               "RelativeToolTip": "PacMan_UI.cpp",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACUAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-13T21:41:40.736Z"
+              "WhenOpened": "2024-12-13T21:41:40.736Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 4,
               "Title": "PacMan_UI.h",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\PacMan_UI.h",
               "RelativeDocumentMoniker": "PacMan_UI.h",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\PacMan_UI.h",
               "RelativeToolTip": "PacMan_UI.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-13T21:40:36.115Z"
+              "WhenOpened": "2024-12-13T21:40:36.115Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 15,
+              "Title": "DynamicEntity.cpp",
+              "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\DynamicEntity.cpp",
+              "RelativeDocumentMoniker": "DynamicEntity.cpp",
+              "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\DynamicEntity.cpp",
+              "RelativeToolTip": "DynamicEntity.cpp",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADwAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-13T16:25:34.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Dot_UI.cpp",
+              "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Dot_UI.cpp",
+              "RelativeDocumentMoniker": "Dot_UI.cpp",
+              "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Dot_UI.cpp",
+              "RelativeToolTip": "Dot_UI.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-14T22:56:25.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "PacMan.cpp",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\PacMan.cpp",
               "RelativeDocumentMoniker": "PacMan.cpp",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\PacMan.cpp",
               "RelativeToolTip": "PacMan.cpp",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAA8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-13T21:38:28.037Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 23,
               "Title": "PacMan.h",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\PacMan.h",
               "RelativeDocumentMoniker": "PacMan.h",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\PacMan.h",
               "RelativeToolTip": "PacMan.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-13T16:27:21.621Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "Wall.cpp",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Wall.cpp",
               "RelativeDocumentMoniker": "Wall.cpp",
@@ -326,19 +350,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 26,
               "Title": "Wall.h",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Wall.h",
               "RelativeDocumentMoniker": "Wall.h",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Wall.h",
               "RelativeToolTip": "Wall.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-13T16:30:10.799Z"
+              "WhenOpened": "2024-12-13T16:30:10.799Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "Portal.cpp",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Portal.cpp",
               "RelativeDocumentMoniker": "Portal.cpp",
@@ -350,19 +375,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 9,
               "Title": "Portal.h",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Portal.h",
               "RelativeDocumentMoniker": "Portal.h",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Portal.h",
               "RelativeToolTip": "Portal.h",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAwAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAsAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-13T16:30:03.429Z"
+              "WhenOpened": "2024-12-13T16:30:03.429Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "StaticObject.cpp",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\StaticObject.cpp",
               "RelativeDocumentMoniker": "StaticObject.cpp",
@@ -370,23 +396,25 @@
               "RelativeToolTip": "StaticObject.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-13T22:22:42.006Z"
+              "WhenOpened": "2024-12-13T22:22:42.006Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 21,
               "Title": "StaticObject.h",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\StaticObject.h",
               "RelativeDocumentMoniker": "StaticObject.h",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\StaticObject.h",
               "RelativeToolTip": "StaticObject.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-13T16:29:04.531Z"
+              "WhenOpened": "2024-12-13T16:29:04.531Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 22,
               "Title": "Intersection.cpp",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Intersection.cpp",
               "RelativeDocumentMoniker": "Intersection.cpp",
@@ -394,71 +422,64 @@
               "RelativeToolTip": "Intersection.cpp",
               "ViewState": "AgIAAC0AAAAAAAAAAAAIwEEAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-17T08:40:07.233Z"
+              "WhenOpened": "2024-12-17T08:40:07.233Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 6,
               "Title": "Intersection.h",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Intersection.h",
               "RelativeDocumentMoniker": "Intersection.h",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Intersection.h",
               "RelativeToolTip": "Intersection.h",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAAA0AAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-13T16:29:00.264Z"
+              "WhenOpened": "2024-12-13T16:29:00.264Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 7,
               "Title": "Ghost.cpp",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Ghost.cpp",
               "RelativeDocumentMoniker": "Ghost.cpp",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Ghost.cpp",
               "RelativeToolTip": "Ghost.cpp",
-              "ViewState": "AgIAAJsBAAAAAAAAAAAIwJ4BAAABAAAAAAAAAA==",
+              "ViewState": "AgIAACkBAAAAAAAAAAAIwJ4BAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-13T16:25:35.933Z"
+              "WhenOpened": "2024-12-13T16:25:35.933Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "Ghost.h",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Ghost.h",
               "RelativeDocumentMoniker": "Ghost.h",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Ghost.h",
               "RelativeToolTip": "Ghost.h",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACAAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-13T16:27:02.509Z"
+              "WhenOpened": "2024-12-13T16:27:02.509Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "DynamicEntity.cpp",
-              "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\DynamicEntity.cpp",
-              "RelativeDocumentMoniker": "DynamicEntity.cpp",
-              "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\DynamicEntity.cpp",
-              "RelativeToolTip": "DynamicEntity.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-13T16:25:34.976Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "DynamicEntity.h",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\DynamicEntity.h",
               "RelativeDocumentMoniker": "DynamicEntity.h",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\DynamicEntity.h",
               "RelativeToolTip": "DynamicEntity.h",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwC0AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAC4AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-13T16:25:43.53Z"
+              "WhenOpened": "2024-12-13T16:25:43.53Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 17,
               "Title": "Dot.cpp",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Dot.cpp",
               "RelativeDocumentMoniker": "Dot.cpp",
@@ -466,47 +487,51 @@
               "RelativeToolTip": "Dot.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-13T16:21:49.765Z"
+              "WhenOpened": "2024-12-13T16:21:49.765Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 18,
               "Title": "Dot.h",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Dot.h",
               "RelativeDocumentMoniker": "Dot.h",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Dot.h",
               "RelativeToolTip": "Dot.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAIwA8AAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-13T21:47:43.839Z"
+              "WhenOpened": "2024-12-13T21:47:43.839Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 24,
               "Title": "Map.cpp",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Map.cpp",
               "RelativeDocumentMoniker": "Map.cpp",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Map.cpp",
               "RelativeToolTip": "Map.cpp",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-13T16:15:05.44Z"
+              "WhenOpened": "2024-12-13T16:15:05.44Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "Map.h",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Map.h",
               "RelativeDocumentMoniker": "Map.h",
               "ToolTip": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Map.h",
               "RelativeToolTip": "Map.h",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB8AAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACAAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-13T16:00:20.458Z"
+              "WhenOpened": "2024-12-13T16:00:20.458Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 19,
               "Title": "Mapa.txt",
               "DocumentMoniker": "C:\\Users\\Geral\\Desktop\\Escola\\Arquitetura de Computadores\\Programas\\PacMan_ATC\\PacMan_ATC\\Mapa.txt",
               "RelativeDocumentMoniker": "Mapa.txt",
@@ -514,7 +539,8 @@
               "RelativeToolTip": "Mapa.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-12-13T16:24:23.865Z"
+              "WhenOpened": "2024-12-13T16:24:23.865Z",
+              "EditorCaption": ""
             }
           ]
         }

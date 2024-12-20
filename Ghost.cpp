@@ -413,12 +413,12 @@ void Ghost::scatter_timer(int seconds) {
 		}
 	}
 }
-void Ghost::start_ghosts(bool* gameRunning) {
+void Ghost::start_ghosts(bool* game_running) {
 	int x = 0;
 	for (Ghost* g : ghosts) {
 		for (int i = 0; i < x; i++) {
 			std::this_thread::sleep_for(std::chrono::seconds(1));
-			if (!(*gameRunning)) {
+			if (!(*game_running)) {
 				return;
 			}
 		}

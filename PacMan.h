@@ -15,8 +15,8 @@ class PacMan : public DynamicEntity {
 	int lives;							// Number of lives of the pacman
 	int score;							// Score of the pacman
 	bool hit;							// If the pacman is hit
-public:
 	Size_TXY pacmanStart;				// Start position of the pacman
+public:
 	PacMan();							// Constructor
 	Size_TXY Move();					// Move the pacman
 	void Turn(Directions direction);	// Turn the pacman

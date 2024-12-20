@@ -30,7 +30,7 @@ public:
 	void Home();								// Move the ghost while inside the home
 	void Roam();								// Move the ghost while outside the home
 	void scatter_timer(int seconds);			// Scatter timer *parallel*
-	static void start_ghosts(bool* gameRunning);// Start the ghosts *parallel*
+	static void start_ghosts(bool* game_running);// Start the ghosts *parallel*
 	static void AddPacMan(PacMan& p);			// Add the PacMan object
 	static void ClearGhosts();					// Clear the list of ghosts
 };

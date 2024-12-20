@@ -4,6 +4,7 @@
 class PacMan_UI : public PacMan, public Drawing {
 public:
 	PacMan_UI();					// Constructor
+	Size_TXY pacmanStart;			// Start position of the pacmanPacMan_UI();					
 	void Draw(Size_TXY coords);		// Draw the object
 	void Update();					// Update the object
 	Size_TXY Start();				// Get the start position of the object
